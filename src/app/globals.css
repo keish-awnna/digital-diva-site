@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-burgundy: #1c0408;
+  --color-brand-burgundy-light: #380814;
+  --color-brand-gold: #b68a48;
+  --color-brand-gold-light: #f2ce8a;
+  --color-brand-gold-text: #8e632a;
+  --color-brand-cream: #fff8e8;
+  --color-brand-navy: #0d2340;
+  --color-brand-ivory: #faf3e8;
+
+  --font-serif: var(--font-playfair);
+  --font-cormorant: var(--font-cormorant);
+  --font-sans: var(--font-dm-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #faf3e8;
+  --foreground: #1c0408;
+
+  /* Mockup specific variables - Updated for Accessibility */
+  --gold: #b68a48;
+  --gold2: #f2ce8a;
+  --gold3: #e2bd6c;
+  --gold-dk: #8e632a;
+  --gold-deep: #b57b3c;
+  --burg: #1c0408;
+  --burg2: #380814;
+  --burg3: #530c1e;
+  --burg4: #6b0f2a;
+  --burg5: #8b1a35;
+  --ivory: #faf3e8;
+  --parch: #f5ead8;
+  --cream: #fff8e8;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Utilities from Mockup */
+.clip-btn {
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+.clip-badge {
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
 }
