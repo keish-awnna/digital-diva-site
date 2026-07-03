@@ -1,13 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  // Using static export for maximum compatibility with Amplify hosting
-  output: "export",
-  // Recommended for static exports
-  images: {
-    unoptimized: true,
-  },
+  // No output override — Amplify WEB_COMPUTE requires standard Next.js server output
+  // which generates required-server-files.json
 };
 
 export default nextConfig;
