@@ -4,119 +4,133 @@ import { ProcessSection } from "@/components/common/ProcessSection";
 import { ScopeSection } from "@/components/legal/ScopeSection";
 import { AboutVeeSection } from "@/components/common/AboutVeeSection";
 import { Reveal } from "@/components/common/Reveal";
+import { AudienceSection } from "@/components/common/AudienceSection";
+import { StatRow } from "@/components/common/StatRow";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Diva Academy By Vee™ | Legal & Credit Empowerment",
+  description: "Empowering self-represented litigants and everyday individuals with the education to navigate legal and credit systems with confidence.",
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="hero-section relative min-h-[90vh] flex items-center bg-brand-burgundy overflow-hidden pt-20">
+      <section className="hero-section relative min-height-[100vh] lg:min-h-[95vh] flex items-center bg-atmosphere overflow-hidden pt-32 pb-24">
+        {/* Artisan Lighting Element */}
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brand-burgundy-light/20 blur-[150px] rounded-full pointer-events-none" />
+        
         {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-burgundy-light/30 to-transparent pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-brand-gold/10 rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-burgundy-light/20 to-transparent pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-brand-gold/5 rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <Reveal className="text-white" direction="up" duration={1.2}>
-            <div className="inline-flex items-center px-3 py-1 bg-brand-gold/10 border border-brand-gold/30 rounded mb-6">
-              <span className="text-brand-gold-light text-[10px] uppercase tracking-[0.3em] font-sans font-semibold">
-                Building Brighter Futures™
+            <div className="inline-flex items-center px-4 py-1.5 bg-brand-gold/5 border border-brand-gold/20 rounded-full mb-8">
+              <span className="text-brand-gold-light text-[10px] uppercase tracking-[0.4em] font-sans font-bold">
+                Welcome to the Academy
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-[1.1]">
-              Knowledge is your <br />
+            <h1 className="text-6xl md:text-8xl font-serif mb-10 leading-[1.05] tracking-tight">
+              Confidence is <br />
               <span className="italic text-brand-gold-light">
-                Greatest Asset.
+                Built Here.
               </span>
             </h1>
-            <p className="text-xl md:text-2xl font-cormorant italic text-brand-ivory/80 mb-10 max-w-xl leading-relaxed">
-              &quot;Digital Diva Academy empowers self-represented litigants and
-              everyday individuals with the education to navigate legal and
-              credit systems with confidence.&quot;
+            
+            <p className="text-2xl md:text-3xl font-sans font-bold uppercase tracking-[0.2em] text-brand-gold-light mb-12 leading-tight">
+              Knowledge is Power. <br />
+              Access is the Mission.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5">
-              <Button variant="primary" size="lg" className="px-10">
-                Explore Legal Series
+            <div className="flex flex-col items-start gap-4">
+              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap min-w-[280px]">
+                Start Your Legal Journey
               </Button>
-              <Button variant="outline-light" size="lg" className="px-10">
-                Credit Restoration
+              <Button variant="outline-light" size="lg" className="px-10 whitespace-nowrap min-w-[280px]">
+                Start Your Credit Journey
               </Button>
             </div>
+          </Reveal>
 
-            <div className="mt-12 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-brand-burgundy bg-brand-gold/20 flex items-center justify-center text-[10px] font-bold text-brand-gold-light"
-                  >
-                    {i}
+          <div className="relative">
+            <Reveal direction="up" delay={0.4} duration={1.5} distance={50}>
+              <div className="relative z-10 aspect-[4/5] w-full max-w-[500px] lg:max-w-none ml-auto overflow-hidden rounded-sm ring-1 ring-brand-gold/30 p-2 bg-brand-gold/5">
+                <div className="w-full h-full bg-brand-burgundy-light/30 relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 flex items-center justify-center text-brand-gold/10 text-[12vw] font-serif italic select-none">
+                    Vee
                   </div>
-                ))}
+                  
+                  {/* Logo Placeholder - Overlapping bottom-left */}
+                  <div className="absolute -bottom-6 -left-6 w-24 h-24 z-20 flex items-center justify-center">
+                    <div className="w-full h-full border border-brand-gold/40 rounded-full flex items-center justify-center backdrop-blur-md bg-brand-burgundy/20">
+                      <div className="w-[85%] h-[85%] border border-brand-gold/20 rounded-full flex items-center justify-center">
+                        <span className="text-brand-gold font-serif italic text-xl select-none opacity-80">
+                          DD
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm font-sans text-brand-ivory/60 tracking-wide uppercase">
-                Join our growing community
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal className="relative hidden lg:block" direction="none" delay={0.4} duration={1.5}>
-            <div className="aspect-[4/5] bg-brand-burgundy-light rounded-2xl border border-brand-gold/20 shadow-2xl overflow-hidden relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
-              <div className="absolute inset-0 flex items-center justify-center text-brand-gold/20 text-8xl font-serif italic">
-                Vee
-              </div>
-            </div>
-            <Reveal
-              className="absolute -bottom-10 -left-10 bg-brand-ivory p-6 rounded-lg shadow-2xl border border-brand-gold/20 max-w-[280px]"
-              direction="right"
-              delay={0.8}
-              distance={40}
-            >
-              <p className="text-brand-burgundy font-serif italic text-lg leading-snug mb-2 lowercase">
-                &quot;The system isn&apos;t broken; it&apos;s just written in a
-                language they don&apos;t expect you to speak.&quot;
-              </p>
-              <div className="h-0.5 w-12 bg-brand-gold" />
             </Reveal>
-          </Reveal>
+            
+            {/* Background Decorative Frame */}
+            <div className="absolute top-12 -right-8 w-full h-full border border-brand-gold/10 -z-10 rounded-sm" />
+          </div>
         </div>
       </section>
 
-      {/* Pathway Overview */}
-      <section className="pathway-overview py-24 bg-brand-ivory relative">
+      {/* Mandatory Disclaimer Banner */}
+      <div className="bg-brand-burgundy py-4 border-y border-brand-gold/20 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-brand-gold-light text-xs md:text-sm font-sans tracking-[0.15em] uppercase font-bold">
+            Digital Diva Academy is an educational platform, not a law firm.
+          </p>
+        </div>
+      </div>
+
+      {/* Pathway Overview Section Starts Immediately After (StatRow Removed) */}
+      <section className="pathway-overview py-32 bg-brand-ivory relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-20" direction="up">
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-4">
-              Choose Your Path to Empowerment
+            <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
+              Your Journey
             </h2>
+            <h3 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-6 italic">
+              Simple Steps to Big Changes
+            </h3>
             <p className="text-lg text-brand-burgundy/70 font-sans max-w-2xl mx-auto">
-              Our educational programs are designed to help you understand
-              complex processes in plain language, whether you&apos;re defending
-              a lawsuit or rebuilding your credit.
+              I&apos;ve broken these complex systems down into two main paths. 
+              Your starting point is just that—a starting point. Whether you&apos;re 
+              handling a courtroom summons or rebuilding your credit profile, we&apos;ll 
+              walk through it together.
             </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <Reveal direction="up" delay={0.1}>
-              <div className="group relative bg-brand-burgundy h-full p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+              <div className="group relative bg-atmosphere-card h-full p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500 border border-white/5">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                 <h3 className="text-brand-gold-light font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
-                  Phase One
+                  Path One
                 </h3>
                 <h4 className="text-3xl font-serif mb-6">
-                  Legal Empowerment Series
+                  Legal Clarity Series
                 </h4>
                 <p className="text-brand-ivory/70 mb-8 leading-relaxed">
-                  From answering your first summons to understanding the motion to
-                  compel arbitration, we teach you how to organize your defense
-                  and represent yourself with confidence.
+                  Being sued by a debt buyer is scary, but you don&apos;t have to 
+                  face it without a plan. I&apos;ll show you how to organize your 
+                  paperwork, understand the rules, and stand your ground with confidence.
                 </p>
                 <ul className="space-y-4 mb-10">
                   {[
-                    "Debt Defense Framework",
-                    "Arbitration Strategies",
-                    "Document Organization",
-                    "Court Procedures",
+                    "Answering Your Summons",
+                    "The Power of Arbitration",
+                    "Keeping Your Files Organized",
+                    "Understanding Court Rules",
                   ].map((item) => (
                     <li
                       key={item}
@@ -128,7 +142,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Button variant="primary" fullWidth size="lg">
-                  Explore Legal Course
+                  Explore Legal Empowerment
                 </Button>
               </div>
             </Reveal>
@@ -137,22 +151,22 @@ export default function Home() {
               <div className="group relative bg-white h-full p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/10 text-brand-burgundy transition-transform hover:-translate-y-2 duration-500">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-burgundy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                 <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
-                  Phase Two
+                  Path Two
                 </h3>
                 <h4 className="text-3xl font-serif mb-6 text-brand-burgundy">
-                  Credit Empowerment Series
+                  Credit Confidence Series
                 </h4>
                 <p className="text-brand-burgundy/60 mb-8 leading-relaxed">
-                  Stop being intimidated by your credit report. Learn how to
-                  review, understand, and strategically address your credit
-                  profile using our DIY educational framework.
+                  Your credit score shouldn&apos;t be a mystery. Learn how to 
+                  read your own reports, spot the errors that are holding you 
+                  back, and take the lead on your own restoration journey.
                 </p>
                 <ul className="space-y-4 mb-10 text-brand-burgundy/80">
                   {[
-                    "Report Analysis Mastery",
-                    "Strategic Correspondence",
-                    "Financial Foundation",
-                    "DIY Credit Restoration",
+                    "Mastering Your Reports",
+                    "Writing Smart Letters",
+                    "Building Solid Foundations",
+                    "DIY Credit Success",
                   ].map((item) => (
                     <li
                       key={item}
@@ -164,7 +178,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Button variant="outline" fullWidth size="lg">
-                  Explore Credit Course
+                  Explore Credit Empowerment
                 </Button>
               </div>
             </Reveal>
@@ -172,64 +186,102 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Audience Section - Who this is for */}
+      <AudienceSection />
+
       {/* Process Section */}
       <ProcessSection />
 
       {/* Featured Offers Section */}
-      <section className="featured-offers py-24 bg-brand-cream border-y border-brand-gold/10">
+      <section className="featured-offers py-24 bg-white border-y border-brand-gold/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-4xl font-serif text-brand-burgundy mb-4">
-                Start Your Education Today
-              </h2>
-              <p className="text-lg text-brand-burgundy/70 leading-relaxed">
-                Browse our selection of courses and templates designed to
-                provide immediate clarity.
-              </p>
+              <Reveal direction="up">
+                <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
+                  Featured Resources
+                </h2>
+                <h3 className="text-4xl font-serif text-brand-burgundy mb-4 italic">
+                  Choose Your Starting Point
+                </h3>
+                <p className="text-lg text-brand-burgundy/70 leading-relaxed font-sans">
+                  Browse our selection of courses and templates designed to
+                  provide immediate clarity across our Legal & Credit Empowerment series.
+                </p>
+              </Reveal>
             </div>
-            <Link
-              href="/courses"
-              className="text-brand-burgundy font-bold border-b-2 border-brand-gold hover:text-brand-gold transition-colors pb-1 uppercase tracking-widest text-sm"
-            >
-              View All Resources
-            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                title: "Arbitration Mastery",
-                desc: "Learn how to effectively use arbitration clauses in your debt defense.",
+                title: "Debt Defense Mastery™",
+                category: "Legal Empowerment",
+                desc: "Essential templates and educational guidance for responding to debt collection lawsuits and organizing your initial defense.",
+                price: "$47",
+                variant: "legal",
+                cta: "Explore the Course"
               },
               {
-                title: "Credit Report Auditor",
-                desc: "A step-by-step guide to identifying errors on your credit report.",
+                title: "Credit Mastery Blueprint™",
+                category: "Credit Empowerment",
+                desc: "Learn to read your reports, spot errors, and take the lead on your restoration journey with proven educational tools.",
+                price: "$97",
+                variant: "credit",
+                cta: "Explore the Course"
               },
               {
-                title: "The Solution Template",
-                desc: "Our most requested template for responding to legal correspondence.",
+                title: "Ultimate Empowerment Bundle™",
+                category: "Legal + Credit",
+                desc: "The complete education system covering both legal defense and credit restoration mastery at a bundled value.",
+                price: "$147",
+                featured: true,
+                variant: "primary",
+                cta: "View Bundle"
               },
             ].map((offer, i) => (
-              <div
-                key={i}
-                className="bg-white p-8 rounded-xl border border-brand-gold/10 shadow-sm hover:shadow-xl transition-shadow flex flex-col"
-              >
-                <div className="h-48 bg-brand-ivory rounded-lg mb-6 flex items-center justify-center italic text-brand-gold/30 font-serif">
-                  {offer.title}
+              <Reveal key={offer.title} direction="up" delay={i * 0.1}>
+                <div
+                  className={`h-full bg-white p-8 rounded-2xl border ${
+                    offer.featured ? "border-brand-gold ring-1 ring-brand-gold/20" : "border-brand-gold/10"
+                  } shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col relative overflow-hidden group`}
+                >
+                  {offer.featured && (
+                    <div className="absolute top-0 right-0 bg-brand-gold text-brand-burgundy text-[9px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-lg">
+                      Best Value
+                    </div>
+                  )}
+                  <div className="text-[10px] text-brand-gold font-bold uppercase tracking-widest mb-4">
+                    {offer.category}
+                  </div>
+                  <h5 className="text-2xl font-serif mb-4 text-brand-burgundy group-hover:text-brand-gold transition-colors">
+                    {offer.title}
+                  </h5>
+                  <p className="text-sm text-brand-burgundy/60 mb-8 flex-grow font-sans leading-relaxed">
+                    {offer.desc}
+                  </p>
+                  <div className="flex items-baseline gap-2 mb-8">
+                    <span className="text-3xl font-serif text-brand-burgundy">{offer.price}</span>
+                    <span className="text-[10px] text-brand-burgundy/40 uppercase font-bold tracking-widest">Enrollment Fee</span>
+                  </div>
+                  <Button variant="primary" fullWidth size="md">
+                    {offer.cta}
+                  </Button>
                 </div>
-                <h5 className="text-xl font-serif mb-3 text-brand-burgundy">
-                  {offer.title}
-                </h5>
-                <p className="text-sm text-brand-burgundy/60 mb-6 flex-grow">
-                  {offer.desc}
-                </p>
-                <Button variant="outline" size="sm">
-                  Learn More
-                </Button>
-              </div>
+              </Reveal>
             ))}
           </div>
+
+          <Reveal direction="up" className="mt-16 text-center">
+            <Link href="/courses">
+              <Button variant="outline" size="lg" className="min-w-[280px]">
+                View All Courses & Bundles
+              </Button>
+            </Link>
+            <p className="mt-6 text-brand-burgundy/40 text-[10px] uppercase tracking-widest font-bold">
+              Save up to $71 when you bundle Legal and Credit series
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -240,9 +292,9 @@ export default function Home() {
       <AboutVeeSection />
 
       {/* Final CTA */}
-      <section className="final-cta-section py-24 bg-brand-burgundy text-white overflow-hidden relative">
+      <section className="final-cta-section py-24 bg-atmosphere-bottom text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-gold via-transparent to-transparent" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold blur-[150px] rounded-full" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Reveal direction="up">

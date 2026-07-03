@@ -20,10 +20,13 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-brand-ivory/70 max-w-sm mb-6 font-sans text-sm leading-relaxed">
-              Empowering everyday people through legal and credit education. We
-              translate complex systems into plain language to help you take
-              back control.
+              Empowering everyday people through legal and credit education. I 
+              translate complex systems into plain language to help you navigate 
+              the path forward with confidence.
             </p>
+            <div className="text-[10px] text-brand-gold-light uppercase tracking-[0.3em] font-bold">
+              Knowledge is Power. Access is the Mission.
+            </div>
           </div>
 
           {/* Quick Links */}

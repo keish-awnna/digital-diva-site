@@ -14,8 +14,8 @@ export const footerLinks = {
     { name: "Refund Policy", href: "/refund" },
   ],
   services: [
-    { name: "Legal Education", href: "/legal" },
-    { name: "Credit Education", href: "/credit" },
-    { name: "Resources", href: "/offers" },
+    { name: "Legal Empowerment", href: "/legal" },
+    { name: "Credit Empowerment", href: "/credit" },
+    { name: "Courses & Templates", href: "/offers" },
   ],
 } as const;

@@ -32,7 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   fullWidth = false,
 }) => {
   const baseStyles =
-    "inline-block font-bold tracking-widest uppercase transition-all duration-200 clip-btn disabled:opacity-50 disabled:cursor-not-allowed text-center";
+    "inline-block font-bold tracking-widest uppercase transition-all duration-300 ease-out clip-btn disabled:opacity-50 disabled:cursor-not-allowed text-center hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)]";
 
   const sizes = {
     sm: "px-4 py-2 text-[10px]",
@@ -42,17 +42,17 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variants = {
     primary:
-      "bg-brand-gold-light bg-gradient-to-br from-brand-gold to-brand-gold-light text-brand-burgundy shadow-lg hover:from-brand-gold-light hover:to-white hover:shadow-xl hover:-translate-y-0.5",
+      "bg-brand-gold-light bg-gradient-to-br from-brand-gold to-brand-gold-light text-brand-burgundy shadow-lg hover:from-brand-gold-light hover:to-white hover:shadow-brand-gold/20",
     secondary:
-      "bg-brand-burgundy text-brand-gold-light hover:bg-brand-burgundy-light",
+      "bg-brand-burgundy text-brand-gold-light shadow-md hover:bg-brand-burgundy-light",
     outline:
-      "bg-transparent border border-brand-gold/50 text-brand-burgundy hover:border-brand-gold hover:text-brand-gold-text",
+      "bg-transparent border border-brand-gold/50 text-brand-burgundy hover:border-brand-gold hover:bg-brand-gold/5",
     "outline-light":
       "bg-transparent border border-brand-gold-light/40 text-brand-gold-light hover:border-brand-gold-light hover:bg-brand-gold-light/10",
     legal:
-      "bg-gradient-to-br from-burg4 to-burg5 text-brand-gold-light hover:from-burg5 hover:to-[#A0142A]",
+      "bg-gradient-to-br from-burg4 to-burg5 text-brand-gold-light shadow-lg hover:from-burg5 hover:to-[#A0142A] hover:shadow-brand-burgundy/40",
     credit:
-      "bg-gradient-to-br from-brand-navy to-[#1A5A9A] text-brand-gold-light hover:from-[#1A5A9A] hover:to-[#2A6AAA]",
+      "bg-gradient-to-br from-brand-navy to-[#1A5A9A] text-brand-gold-light shadow-lg hover:from-[#1A5A9A] hover:to-[#2A6AAA] hover:shadow-brand-navy/30",
   };
 
   const combinedClasses = `

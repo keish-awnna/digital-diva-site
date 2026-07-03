@@ -856,3 +856,44 @@ first.
 
 Do not build the store operations, course platform, client portal, payment
 system, or booking system yet.
+
+---
+
+## Git and Commit Structure
+
+Maintain a clean and professional commit history.
+
+### Commit Frequency
+
+Commit and push after completing a **single, discrete unit of work**. This
+includes:
+
+- A single feature component (e.g., "Implement Hero section")
+- A specific bug fix (e.g., "Fix button contrast ratio")
+- A structural refactor (e.g., "Move common UI components to shared folder")
+- A configuration update (e.g., "Add GSAP and Lenis dependencies")
+
+Avoid committing every tiny line change, and avoid grouping unrelated features
+into a single giant commit.
+
+### Commit Best Practices
+
+- Use the Single Responsibility Principle for commits.
+- If a commit message requires the word "and" more than once, split the work
+  into smaller commits.
+- Keep the history descriptive and easy to debug or roll back.
+
+---
+
+## Interactive Discussion Mode
+
+If the user starts a message with **"opinion time:"**, this indicates a request
+for discussion, brainstorming, or planning only.
+
+In this mode:
+- Do not make any changes to the project files.
+- Do not run terminal commands that modify the project.
+- Provide feedback, pros/cons, or strategic plans based on the user's inquiry.
+- Wait for explicit confirmation before proceeding with any implementation.
+
+

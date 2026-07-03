@@ -24,24 +24,32 @@ export function AboutVeeSection() {
             <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
               Meet the Founder
             </h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-8 italic italic">
-              The Woman Behind the Wisdom
+            <h3 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-8 italic">
+              Confidence is built through knowledge.
             </h3>
+
+            {/* Feature Perspective Quote */}
+            <div className="bg-brand-ivory p-8 border-l-2 border-brand-gold mb-10 shadow-sm italic font-serif text-brand-burgundy text-xl">
+              &quot;The system isn&apos;t broken; it&apos;s just written in a language they don&apos;t expect you to speak.&quot;
+            </div>
+
             <div className="space-y-6 text-brand-burgundy/70 font-sans leading-relaxed text-lg mb-10">
               <p>
                 I founded Digital Diva Academy with a single mission: to
-                demystify the systems that often keep good people down.
+                demystify the systems that often keep good people down. 
+                I believe that knowledge shouldn&apos;t be gatekept behind expensive 
+                retainers and confusing jargon.
               </p>
               <p>
-                After years of navigating the complex terrain of legal
+                After navigating the complex terrain of legal
                 procedures and credit systems, I realized that the biggest
                 barrier to entry isn&apos;t the law itself—it&apos;s the
-                language.
+                language used to describe it.
               </p>
               <p>
                 I don&apos;t practice law. I practice empowerment. My goal is to
                 give you the tools, templates, and training to speak for
-                yourself with authority and clarity.
+                yourself with authority, clarity, and most importantly, confidence.
               </p>
             </div>
             <Button variant="outline" size="lg">

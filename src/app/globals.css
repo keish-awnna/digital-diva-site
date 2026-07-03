@@ -48,3 +48,28 @@ body {
 .clip-badge {
   clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
 }
+
+/* Atmospheric Lighting */
+.bg-atmosphere {
+  background: radial-gradient(
+    circle at 50% -20%,
+    var(--burg2) 0%,
+    var(--burg) 70%
+  );
+}
+
+.bg-atmosphere-bottom {
+  background: radial-gradient(
+    circle at 50% 120%,
+    var(--burg2) 0%,
+    var(--burg) 80%
+  );
+}
+
+.bg-atmosphere-card {
+  background: radial-gradient(
+    circle at 100% 0%,
+    var(--burg2) 0%,
+    var(--burg) 100%
+  );
+}

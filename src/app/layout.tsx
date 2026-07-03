@@ -33,7 +33,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Digital Diva Academy By Vee™ | Legal & Credit Empowerment",
   description:
-    "Legal education, court process coaching, credit repair education, and financial empowerment built for everyday people.",
+    "Legal education, court process coaching, credit empowerment, and financial education built for everyday people.",
 };
 
 export default function RootLayout({
