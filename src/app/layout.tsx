@@ -8,6 +8,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { SmoothScroll } from "@/components/common/SmoothScroll";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -44,10 +45,12 @@ export default function RootLayout({
       className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-brand-ivory text-brand-burgundy selection:bg-brand-burgundy selection:text-brand-gold">
-        <DisclaimerBanner />
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <DisclaimerBanner />
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

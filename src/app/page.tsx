@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ProcessSection } from "@/components/common/ProcessSection";
 import { ScopeSection } from "@/components/legal/ScopeSection";
 import { AboutVeeSection } from "@/components/common/AboutVeeSection";
+import { Reveal } from "@/components/common/Reveal";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-brand-gold/10 rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="text-white">
+          <Reveal className="text-white" direction="up" duration={1.2}>
             <div className="inline-flex items-center px-3 py-1 bg-brand-gold/10 border border-brand-gold/30 rounded mb-6">
               <span className="text-brand-gold-light text-[10px] uppercase tracking-[0.3em] font-sans font-semibold">
                 Building Brighter Futures™
@@ -36,7 +37,7 @@ export default function Home() {
               <Button variant="primary" size="lg" className="px-10">
                 Explore Legal Series
               </Button>
-              <Button variant="outline" size="lg" className="px-10">
+              <Button variant="outline-light" size="lg" className="px-10">
                 Credit Restoration
               </Button>
             </div>
@@ -56,30 +57,35 @@ export default function Home() {
                 Join our growing community
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative hidden lg:block">
+          <Reveal className="relative hidden lg:block" direction="none" delay={0.4} duration={1.5}>
             <div className="aspect-[4/5] bg-brand-burgundy-light rounded-2xl border border-brand-gold/20 shadow-2xl overflow-hidden relative group">
               <div className="absolute inset-0 bg-gradient-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
               <div className="absolute inset-0 flex items-center justify-center text-brand-gold/20 text-8xl font-serif italic">
                 Vee
               </div>
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-brand-ivory p-6 rounded-lg shadow-2xl border border-brand-gold/20 max-w-[280px]">
+            <Reveal
+              className="absolute -bottom-10 -left-10 bg-brand-ivory p-6 rounded-lg shadow-2xl border border-brand-gold/20 max-w-[280px]"
+              direction="right"
+              delay={0.8}
+              distance={40}
+            >
               <p className="text-brand-burgundy font-serif italic text-lg leading-snug mb-2 lowercase">
                 &quot;The system isn&apos;t broken; it&apos;s just written in a
                 language they don&apos;t expect you to speak.&quot;
               </p>
               <div className="h-0.5 w-12 bg-brand-gold" />
-            </div>
-          </div>
+            </Reveal>
+          </Reveal>
         </div>
       </section>
 
       {/* Pathway Overview */}
       <section className="pathway-overview py-24 bg-brand-ivory relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <Reveal className="text-center mb-20" direction="up">
             <h2 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-4">
               Choose Your Path to Empowerment
             </h2>
@@ -88,76 +94,80 @@ export default function Home() {
               complex processes in plain language, whether you&apos;re defending
               a lawsuit or rebuilding your credit.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="group relative bg-brand-burgundy p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-              <h3 className="text-brand-gold-light font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
-                Phase One
-              </h3>
-              <h4 className="text-3xl font-serif mb-6">
-                Legal Empowerment Series
-              </h4>
-              <p className="text-brand-ivory/70 mb-8 leading-relaxed">
-                From answering your first summons to understanding the motion to
-                compel arbitration, we teach you how to organize your defense
-                and represent yourself with confidence.
-              </p>
-              <ul className="space-y-4 mb-10">
-                {[
-                  "Debt Defense Framework",
-                  "Arbitration Strategies",
-                  "Document Organization",
-                  "Court Procedures",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-3 text-sm font-sans tracking-wide"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Button variant="primary" fullWidth size="lg">
-                Explore Legal Course
-              </Button>
-            </div>
+            <Reveal direction="up" delay={0.1}>
+              <div className="group relative bg-brand-burgundy h-full p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+                <h3 className="text-brand-gold-light font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
+                  Phase One
+                </h3>
+                <h4 className="text-3xl font-serif mb-6">
+                  Legal Empowerment Series
+                </h4>
+                <p className="text-brand-ivory/70 mb-8 leading-relaxed">
+                  From answering your first summons to understanding the motion to
+                  compel arbitration, we teach you how to organize your defense
+                  and represent yourself with confidence.
+                </p>
+                <ul className="space-y-4 mb-10">
+                  {[
+                    "Debt Defense Framework",
+                    "Arbitration Strategies",
+                    "Document Organization",
+                    "Court Procedures",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm font-sans tracking-wide"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="primary" fullWidth size="lg">
+                  Explore Legal Course
+                </Button>
+              </div>
+            </Reveal>
 
-            <div className="group relative bg-white p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/10 text-brand-burgundy transition-transform hover:-translate-y-2 duration-500">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-burgundy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-              <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
-                Phase Two
-              </h3>
-              <h4 className="text-3xl font-serif mb-6 text-brand-burgundy">
-                Credit Empowerment Series
-              </h4>
-              <p className="text-brand-burgundy/60 mb-8 leading-relaxed">
-                Stop being intimidated by your credit report. Learn how to
-                review, understand, and strategically address your credit
-                profile using our DIY educational framework.
-              </p>
-              <ul className="space-y-4 mb-10 text-brand-burgundy/80">
-                {[
-                  "Report Analysis Mastery",
-                  "Strategic Correspondence",
-                  "Financial Foundation",
-                  "DIY Credit Restoration",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-3 text-sm font-sans tracking-wide"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Button variant="outline" fullWidth size="lg">
-                Explore Credit Course
-              </Button>
-            </div>
+            <Reveal direction="up" delay={0.3}>
+              <div className="group relative bg-white h-full p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/10 text-brand-burgundy transition-transform hover:-translate-y-2 duration-500">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-burgundy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+                <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
+                  Phase Two
+                </h3>
+                <h4 className="text-3xl font-serif mb-6 text-brand-burgundy">
+                  Credit Empowerment Series
+                </h4>
+                <p className="text-brand-burgundy/60 mb-8 leading-relaxed">
+                  Stop being intimidated by your credit report. Learn how to
+                  review, understand, and strategically address your credit
+                  profile using our DIY educational framework.
+                </p>
+                <ul className="space-y-4 mb-10 text-brand-burgundy/80">
+                  {[
+                    "Report Analysis Mastery",
+                    "Strategic Correspondence",
+                    "Financial Foundation",
+                    "DIY Credit Restoration",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-sm font-sans tracking-wide"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="outline" fullWidth size="lg">
+                  Explore Credit Course
+                </Button>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

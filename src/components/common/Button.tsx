@@ -1,7 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "legal" | "credit";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "outline-light"
+  | "legal"
+  | "credit";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -41,6 +47,8 @@ export const Button: React.FC<ButtonProps> = ({
       "bg-brand-burgundy text-brand-gold-light hover:bg-brand-burgundy-light",
     outline:
       "bg-transparent border border-brand-gold/50 text-brand-burgundy hover:border-brand-gold hover:text-brand-gold-text",
+    "outline-light":
+      "bg-transparent border border-brand-gold-light/40 text-brand-gold-light hover:border-brand-gold-light hover:bg-brand-gold-light/10",
     legal:
       "bg-gradient-to-br from-burg4 to-burg5 text-brand-gold-light hover:from-burg5 hover:to-[#A0142A]",
     credit:
