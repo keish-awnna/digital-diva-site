@@ -245,24 +245,26 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-gold via-transparent to-transparent" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
-            Ready to take <br />
-            <span className="italic text-brand-gold">
-              Control of your Future?
-            </span>
-          </h2>
-          <p className="text-xl text-brand-ivory/70 mb-12 font-cormorant italic italic">
-            &quot;Empowerment begins with understanding. Join the Academy today
-            and start your journey toward clarity.&quot;
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Button variant="primary" size="lg" className="px-12">
-              Enroll in a Course
-            </Button>
-            <Button variant="outline" size="lg" className="px-12">
-              Contact for Coaching
-            </Button>
-          </div>
+          <Reveal direction="up">
+            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
+              Ready to take <br />
+              <span className="italic text-brand-gold">
+                Control of your Future?
+              </span>
+            </h2>
+            <p className="text-xl text-brand-ivory/70 mb-12 font-cormorant italic">
+              &quot;Empowerment begins with understanding. Join the Academy today
+              and start your journey toward clarity.&quot;
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button variant="primary" size="lg" className="px-12">
+                Enroll in a Course
+              </Button>
+              <Button variant="outline-light" size="lg" className="px-12">
+                Contact for Coaching
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
