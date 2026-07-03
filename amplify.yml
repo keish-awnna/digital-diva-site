@@ -3,9 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
+        - node -v
+        - npm -v
         - npm ci --legacy-peer-deps
     build:
       commands:
+        - env | grep -E "NODE_OPTIONS|NEXT_PUBLIC" || true
+        - export NODE_OPTIONS=--max-old-space-size=4096
         - npm run build
   artifacts:
     baseDirectory: out
