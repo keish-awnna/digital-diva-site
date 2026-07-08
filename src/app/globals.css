@@ -11,13 +11,16 @@
   --color-brand-ivory: #faf3e8;
 
   --font-serif: var(--font-playfair);
-  --font-cormorant: var(--font-cormorant);
   --font-sans: var(--font-dm-sans);
 }
 
 :root {
   --background: #faf3e8;
   --foreground: #1c0408;
+
+  /* Brand Tokens */
+  --nav-border: 1px solid rgba(182, 138, 72, 0.4);
+  --section-divider: 1px solid rgba(182, 138, 72, 0.4);
 
   /* Mockup specific variables - Updated for Accessibility */
   --gold: #b68a48;
