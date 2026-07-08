@@ -2,7 +2,7 @@ export const navigationLinks = [
   { name: "Home", href: "/" },
   { name: "Legal Empowerment", href: "/legal" },
   { name: "Credit Empowerment", href: "/credit" },
-  { name: "Courses & Templates", href: "/offers" },
+  { name: "Courses & Templates", href: "/courses" },
   { name: "About", href: "/about" },
 ] as const;
 
@@ -16,6 +16,6 @@ export const footerLinks = {
   services: [
     { name: "Legal Empowerment", href: "/legal" },
     { name: "Credit Empowerment", href: "/credit" },
-    { name: "Courses & Templates", href: "/offers" },
+    { name: "Courses & Templates", href: "/courses" },
   ],
 } as const;

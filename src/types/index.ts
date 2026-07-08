@@ -5,6 +5,8 @@ export interface Offer {
   name: string;
   category: OfferCategory;
   price?: string;
+  priceUnit?: string;
+  tierLabel?: string;
   shortDescription: string;
   deliverables?: string[];
   format?: string;
