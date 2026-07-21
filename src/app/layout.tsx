@@ -37,8 +37,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans bg-brand-ivory text-brand-burgundy selection:bg-brand-burgundy selection:text-brand-gold">
+      <body 
+        className="min-h-full flex flex-col font-sans bg-brand-ivory text-brand-burgundy selection:bg-brand-burgundy selection:text-brand-gold"
+        suppressHydrationWarning
+      >
         <SmoothScroll>
           <DisclaimerBanner />
           <Navbar />
