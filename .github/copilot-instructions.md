@@ -885,6 +885,19 @@ into a single giant commit.
 
 ---
 
+## Approval Workflow
+
+To ensure alignment and prevent unauthorized changes:
+
+- **Do not make any changes to project files or architecture without first presenting a proposal.**
+- For every task, first provide:
+  1. A summary of the proposed changes or updates.
+  2. A detailed plan of the files to be modified and the logic to be implemented.
+- **Wait for explicit user approval before proceeding with any file edits or command execution.**
+- If a task is complex, break it down and seek approval for each phase.
+
+---
+
 ## Interactive Discussion Mode
 
 If the user starts a message with **"opinion time:"**, this indicates a request

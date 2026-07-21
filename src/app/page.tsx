@@ -257,7 +257,7 @@ export default function Home() {
                   <h5 className="text-2xl font-serif mb-4 text-brand-burgundy group-hover:text-brand-gold transition-colors">
                     {offer.title}
                   </h5>
-                  <p className="text-sm text-brand-burgundy/60 mb-8 flex-grow font-sans leading-relaxed">
+                  <p className="text-sm text-brand-burgundy/60 mb-8 grow font-sans leading-relaxed">
                     {offer.desc}
                   </p>
                   <div className="flex items-baseline gap-2 mb-8">
@@ -274,7 +274,7 @@ export default function Home() {
 
           <Reveal direction="up" className="mt-16 text-center">
             <Link href="/courses">
-              <Button variant="outline" size="lg" className="min-w-[280px]">
+              <Button variant="outline" size="lg" className="min-w-70">
                 View All Courses & Bundles
               </Button>
             </Link>
@@ -294,7 +294,7 @@ export default function Home() {
       {/* Final CTA */}
       <section className="final-cta-section py-24 bg-atmosphere-bottom text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold blur-[150px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-brand-gold blur-[150px] rounded-full" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <Reveal direction="up">

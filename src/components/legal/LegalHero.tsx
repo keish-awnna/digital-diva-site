@@ -13,7 +13,7 @@ const stats = [
 
 export function LegalHero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 px-6 sm:px-12 overflow-hidden bg-brand-burgundy border-t-[var(--section-divider)]">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 px-6 sm:px-12 overflow-hidden bg-brand-burgundy border-t-(--section-divider)">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 bg-atmosphere opacity-90" />
       
@@ -83,7 +83,7 @@ export function LegalHero() {
       </div>
       
       {/* Scroll indicator or accent */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-brand-gold/50 to-transparent" />
     </section>
   );
 }

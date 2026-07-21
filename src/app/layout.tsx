@@ -46,7 +46,7 @@ export default function RootLayout({
         <SmoothScroll>
           <DisclaimerBanner />
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>
