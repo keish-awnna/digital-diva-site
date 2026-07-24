@@ -269,50 +269,33 @@ Do not hard-code placeholder URLs throughout multiple components.
 Buttons that will eventually connect to SuiteDash or another external service
 should be visually designed now but should not pretend to be functional.
 
-Do not scatter `href="#"` throughout the project.
+Do not scatter `href="#"` throughout the project. Using `href="#"` can cause the
+page to jump to the top and creates misleading navigation behavior.
 
-Using `href="#"` can cause the page to jump to the top and creates misleading
-navigation behavior.
+### Preferred Approach: Internal Placeholder Route
 
-Use one of the following approaches:
-
-### Option 1: Disabled CTA
-
-Render an unfinished CTA as a disabled button.
-
-```tsx
-type CtaProps = {
-  href?: string;
-  children: React.ReactNode;
-};
-
-export function Cta({ href, children }: CtaProps) {
-  if (!href) {
-    return (
-      <button type="button" disabled aria-disabled="true">
-        {children}
-      </button>
-    );
-  }
-
-  return <a href={href}>{children}</a>;
-}
-```
-
-### Option 2: Temporary Internal Destination
-
-During design and navigation testing, use an approved internal route such as:
+Route placeholder CTAs to an approved internal path during the design phase:
 
 - `/contact`
 - `/coming-soon`
 
-Do not create fake checkout, booking, login, or enrollment experiences.
-
-Clearly mark future integration points with TODO comments such as:
+This keeps the button fully styled, visible, and keyboard-accessible. Mark every
+placeholder CTA with a TODO comment:
 
 ```ts
 // TODO: Connect this CTA to the approved SuiteDash destination.
 ```
+
+### When to Use `disabled`
+
+Use `disabled` only when:
+- The button is inside a form that is not yet wired up.
+- The action is contextually unavailable (e.g., a submit button before required
+  fields are filled).
+
+Do **not** use `disabled` for navigation CTAs in headers or hero sections.
+The `disabled:opacity-50` base style makes buttons look visually broken on dark
+backgrounds such as the burgundy navbar. Prefer an internal placeholder route.
 
 Do not add excessive TODO comments. Only add them where an actual future
 integration will be required.
@@ -714,12 +697,12 @@ Do not design only for the desktop screenshot.
 
 ## Accessibility
 
-Target WCAG 2.2 AA practices.
+Target WCAG 2.2 AA.
 
-Requirements:
+### General Requirements
 
 - Use semantic HTML.
-- Use landmarks such as `header`, `nav`, `main`, `section`, and `footer`.
+- Use landmarks: `header`, `nav`, `main`, `section`, `footer`.
 - Maintain a logical heading hierarchy.
 - Use one primary H1 per page.
 - Add accessible labels to buttons, links, menus, and form fields.
@@ -731,14 +714,112 @@ Requirements:
 - Do not rely on color alone to communicate meaning.
 - Respect `prefers-reduced-motion`.
 - Avoid autoplaying media.
-- Ensure mobile navigation is keyboard accessible.
-- Ensure accordions are keyboard accessible.
-- Associate validation messages with their related fields.
 - Use buttons for actions and links for navigation.
 - Do not create clickable `div` elements.
 
-Animations should be subtle and should not be required to understand the
-content.
+Animations should be subtle and should not be required to understand content.
+
+### Implementation Rules
+
+These patterns are enforced going forward. Each was confirmed through a formal
+audit.
+
+**Page route files must not contain `<main>`.**
+`layout.tsx` already provides the `<main>` landmark. All `page.tsx` files must
+use a fragment `<>` or a `<div>` as their root — never `<main>`.
+
+```tsx
+// ✅ Correct
+export default function LegalPage() {
+  return (
+    <>
+      <LegalHero />
+      <LegalPrograms />
+    </>
+  );
+}
+
+// ❌ Wrong — creates a nested <main>
+export default function LegalPage() {
+  return (
+    <main>
+      <LegalHero />
+    </main>
+  );
+}
+```
+
+**Every `<nav>` element must have `aria-label`.**
+Without a label, screen readers cannot distinguish between multiple navigation
+regions on the same page.
+
+```tsx
+// ✅ Correct
+<nav aria-label="Main navigation">...</nav>
+<nav aria-label="Services navigation">...</nav>
+
+// ❌ Wrong
+<nav>...</nav>
+```
+
+**Decorative icons must have `aria-hidden="true"`.**
+All Lucide SVG icons that do not convey unique information must be hidden from
+assistive technology.
+
+```tsx
+// ✅ Correct — on the element
+<Check aria-hidden="true" className="w-4 h-4 text-brand-gold" />
+
+// ✅ Correct — at the render site when icons are stored as JSX data
+<span aria-hidden="true">{item.icon}</span>
+
+// ❌ Wrong — screen reader announces an unnamed image
+<Check className="w-4 h-4 text-brand-gold" />
+```
+
+**Emoji in text content must be wrapped.**
+Screen readers describe emoji by their Unicode name ("balance scale", "credit
+card"). Wrap all decorative emoji in `<span aria-hidden="true">`.
+
+```tsx
+// ✅ Correct
+<span aria-hidden="true">⚖</span> Legal Empowerment Series™
+
+// ❌ Wrong
+⚖ Legal Empowerment Series™
+```
+
+**Heading levels must be sequential — no skipping.**
+Heading levels communicate document structure to screen reader users.
+
+| Context | Level |
+|---|---|
+| Page title | H1 |
+| Section heading | H2 |
+| Subsection label | H3 |
+| Card or item title inside a section | H4 |
+| Sub-item inside a card | H5 |
+
+Never skip a level. If a heading looks too large visually, resize it with
+Tailwind typography classes — do not change the element type to achieve a
+visual size.
+
+**Animations must check `prefers-reduced-motion`.**
+Any component using GSAP, CSS keyframes, or animation libraries must skip or
+minimize motion when the OS preference is active.
+
+```ts
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  // Make content immediately visible without motion
+  return;
+}
+```
+
+**`clip-path` elements require special focus handling.**
+`clip-path` clips the browser's focus outline, making keyboard focus invisible.
+The `.clip-btn` utility has a global override in `globals.css` that removes
+`clip-path` on `:focus-visible`. Do not add custom focus styles to individual
+`Button` instances — the global rule handles it automatically.
 
 ---
 
@@ -944,6 +1025,70 @@ first.
 
 Do not build the store operations, course platform, client portal, payment
 system, or booking system yet.
+
+---
+
+## Bloat Prevention — Clean As You Go
+
+These guardrails prevent accumulated technical debt. Apply them at every step,
+not just during dedicated cleanup passes.
+
+### Before Writing Code
+
+- **Check for an existing component first.** Before creating a new file, search
+  the project. Extend an existing component rather than duplicating it.
+- **Check for an existing CSS variable.** Before adding a new variable to
+  `:root`, verify the value doesn't already exist in `@theme inline`. If it
+  does, use the Tailwind utility — do not add a duplicate.
+- **Check for an existing design token.** If you're about to type a hex value
+  (`#`), stop. Find the design token or atmospheric utility class instead.
+- **Content belongs in `src/content/`.** Before writing offer names, prices,
+  or course details inline in a component, check if they should come from
+  `src/content/offers.ts` or another content file.
+
+### While Writing Code
+
+- **Validate Tailwind v4 class names as you write them.** Before using any
+  class, mentally verify it exists in v4. Common v3→v4 renames:
+  `flex-grow`→`grow`, `flex-shrink-0`→`shrink-0`,
+  `bg-gradient-to-*`→`bg-linear-to-*`, `min-height-[x]`→`min-h-[x]`.
+- **`:root` variables are not Tailwind utilities.** Do not reference a `:root`
+  custom property as a Tailwind class name (e.g., `from-burg4`). Use the
+  `from-[var(--burg4)]` syntax instead.
+- **No dead className expressions.** Every conditional className expression
+  must produce a non-empty result in at least one branch. Remove any
+  `condition ? "" : ""` patterns immediately.
+- **Maximum 4 JSX nesting levels.** When writing a JSX subtree, count the
+  nesting depth. If it exceeds 4 levels, extract a named sub-component before
+  continuing. Do not defer this cleanup.
+- **No inline stats or fabricated numbers.** Even in placeholder components,
+  never write invented counts, enrollment numbers, or results. Use clearly
+  labeled placeholder copy such as `[Count pending]`.
+
+### After Writing Code
+
+- **Remove unused imports immediately.** When removing a component from a
+  page, remove the import at the top of the file in the same edit.
+- **Check whether the removed component is used elsewhere.** If the component
+  file has no remaining import in the project, add a comment marking it as
+  an intentional placeholder or delete it.
+- **Delete commented-out code.** Do not leave dead blocks behind with
+  `{/* Old version */}` markers. Use git history instead.
+- **Verify unused `:root` variables.** After any CSS change, confirm every
+  variable in the `:root` block is referenced at least once in the stylesheet.
+  Remove any that are not.
+- **Run `npx tsc --noEmit` before every commit.** This catches dead imports,
+  unused variables, and type errors before they accumulate.
+
+### Ongoing Hygiene
+
+- **One source of truth.** If the same value appears in two places, that is
+  bloat. Consolidate to the canonical location.
+- **Placeholder files must be documented.** A component file that is not yet
+  imported anywhere must include a comment at the top explaining its future
+  purpose. If no such purpose exists, delete the file.
+- **No `href="#"` anywhere.** Use an approved internal route (`/contact`,
+  `/coming-soon`) or `disabled` (for form submit buttons only).
 
 ---
 
