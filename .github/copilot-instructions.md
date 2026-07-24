@@ -602,6 +602,42 @@ Additional atmosphere utilities for full-section backgrounds:
 Do not use flat hex values (`bg-brand-burgundy`, `bg-brand-navy`, `bg-brand-gold`)
 for dark card backgrounds. Use the atmospheric gradient utilities instead.
 
+### CSS Variable Architecture
+
+Brand colors are defined **once** in the `@theme inline` block in `globals.css`.
+They become Tailwind utilities automatically (e.g., `text-brand-gold`, `bg-brand-navy`).
+
+A secondary `:root` block holds gradient palette variables (`--burg`, `--burg2`–`--burg5`,
+`--gold3`, `--gold-deep`) that are used **only** inside the atmospheric gradient utility
+definitions in `globals.css`. Do not duplicate `@theme` values in `:root`.
+
+Rules:
+- Do not add a new CSS variable to `:root` if the same value already exists in `@theme`.
+- Do not reference `:root` CSS custom properties as Tailwind utility names (e.g., `from-burg4`
+  is invalid — use `from-[var(--burg4)]` instead).
+- Do not create new CSS variables without a clear usage. Remove unused variables immediately.
+
+### Code Quality Rules
+
+- **Maximum nesting depth: 4 levels** — If a JSX subtree requires more than 4 levels of
+  nested elements, extract it into a named sub-component.
+- **No dead code** — Remove unused components, props, and CSS classes before committing.
+  A component file that is not imported anywhere must be deleted or clearly documented as
+  an intentional placeholder with a comment explaining its future purpose.
+- **No fabricated statistics** — Even placeholder components must not contain invented
+  counts, enrollment numbers, or result claims (e.g., "1,400+ Enrollments").
+  Use clearly labeled placeholder copy instead (e.g., `[Enrollment count pending]`).
+- **No hardcoded prices outside `src/content/`** — All prices, course names, and product
+  details must come from `src/content/offers.ts`. Hero stat grids and feature highlights
+  that show price data must reference the offers content file.
+- **No hardcoded hex values in components** — Use design system tokens or atmospheric
+  gradient utilities at all times.
+- **No dead prop expressions** — Remove props or className expressions that always resolve
+  to an empty string or have no effect (e.g., `className={condition ? "" : ""}`).
+- **Verify Tailwind v4 class names before committing** — Confirm all utility classes exist
+  in v4. Common v3→v4 renames: `flex-grow`→`grow`, `flex-shrink-0`→`shrink-0`,
+  `bg-gradient-to-*`→`bg-linear-to-*`, `h-[1px]`→`h-px`, `min-height-[x]`→`min-h-[x]`.
+
 ---
 
 ## Offers and Pricing Data

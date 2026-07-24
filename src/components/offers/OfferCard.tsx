@@ -17,8 +17,8 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
   // Base styles for featured vs non-featured
   const cardClasses = isFeatured
     ? isLegal
-      ? "bg-gradient-to-br from-[#1c0408] to-[#530c1e] border-2 border-brand-gold shadow-2xl"
-      : "bg-gradient-to-br from-[#0D2340] to-[#1A3A6A] border-2 border-brand-gold shadow-2xl"
+      ? "bg-atmosphere-card border-2 border-brand-gold shadow-2xl"
+      : "bg-atmosphere-navy border-2 border-brand-gold shadow-2xl"
     : "bg-brand-ivory border border-brand-burgundy/10 shadow-sm";
 
   const titleClasses = isFeatured ? "text-white" : isLegal ? "text-brand-burgundy" : "text-brand-navy";
@@ -84,7 +84,6 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
             variant={isFeatured ? "primary" : isLegal ? "legal" : "credit"} 
             size="sm"
             href={offer.href || "/contact"}
-            className={!isFeatured ? (isLegal ? "" : "") : ""}
           >
             {offer.ctaLabel}
           </Button>

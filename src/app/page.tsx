@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="hero-section relative min-height-[100vh] lg:min-h-[95vh] flex items-center bg-atmosphere overflow-hidden pt-32 pb-24">
+      <section className="hero-section relative min-h-screen lg:min-h-[95vh] flex items-center bg-atmosphere overflow-hidden pt-32 pb-24">
         {/* Artisan Lighting Element */}
         <div className="absolute top-0 left-1/4 w-200 h-200 bg-brand-burgundy-light/20 blur-[150px] rounded-full pointer-events-none" />
         
@@ -358,7 +358,7 @@ export default function Home() {
                 Control of your Future?
               </span>
             </h2>
-            <p className="text-xl text-brand-ivory/70 mb-12 font-cormorant italic">
+            <p className="text-xl text-brand-ivory/70 mb-12 font-serif italic">
               &quot;Empowerment begins with understanding. Join the Academy today
               and start your journey toward clarity.&quot;
             </p>

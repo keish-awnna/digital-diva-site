@@ -80,7 +80,7 @@ export function ScopeSection() {
             <Reveal
               direction="up"
               delay={0.2}
-              className="p-12 lg:p-16 bg-[#FDF9F3]"
+              className="p-12 lg:p-16 bg-brand-ivory"
             >
               <h2 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Boundaries

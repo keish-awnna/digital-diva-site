@@ -39,7 +39,7 @@ export default function CoursesPage() {
                   Focus on debt defense, court procedures, and self-representation education.
                 </p>
                 {/* TODO: List legal courses here */}
-                <Button variant="outline" fullWidth>Explore Legal Resources</Button>
+                <Button variant="primary" fullWidth>Explore Legal Resources</Button>
               </div>
               <div className="p-12 bg-white rounded-3xl border border-brand-gold/10 shadow-sm">
                 <h3 className="text-2xl font-serif text-brand-burgundy mb-4 italic">Credit Empowerment Series</h3>
@@ -47,7 +47,7 @@ export default function CoursesPage() {
                   Focus on FICO optimization, dispute education, and credit self-sufficiency.
                 </p>
                 {/* TODO: List credit courses here */}
-                <Button variant="outline" fullWidth>Explore Credit Resources</Button>
+                <Button variant="primary" fullWidth>Explore Credit Resources</Button>
               </div>
             </div>
           </Reveal>

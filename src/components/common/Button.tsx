@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
     "outline-light":
       "bg-transparent border border-brand-gold-light/40 text-brand-gold-light hover:border-brand-gold-light hover:bg-brand-gold-light/10",
     legal:
-      "bg-gradient-to-br from-burg4 to-burg5 text-brand-gold-light shadow-lg hover:from-burg5 hover:to-[#A0142A] hover:shadow-brand-burgundy/40",
+      "bg-gradient-to-br from-[var(--burg4)] to-[var(--burg5)] text-brand-gold-light shadow-lg hover:from-[var(--burg5)] hover:to-[#A0142A] hover:shadow-brand-burgundy/40",
     credit:
       "bg-gradient-to-br from-brand-navy to-[#1A5A9A] text-brand-gold-light shadow-lg hover:from-[#1A5A9A] hover:to-[#2A6AAA] hover:shadow-brand-navy/30",
   };
