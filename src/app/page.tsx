@@ -5,7 +5,6 @@ import { ScopeSection } from "@/components/legal/ScopeSection";
 import { AboutVeeSection } from "@/components/common/AboutVeeSection";
 import { Reveal } from "@/components/common/Reveal";
 import { AudienceSection } from "@/components/common/AudienceSection";
-import { StatRow } from "@/components/common/StatRow";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,10 +18,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section relative min-height-[100vh] lg:min-h-[95vh] flex items-center bg-atmosphere overflow-hidden pt-32 pb-24">
         {/* Artisan Lighting Element */}
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brand-burgundy-light/20 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-200 h-200 bg-brand-burgundy-light/20 blur-[150px] rounded-full pointer-events-none" />
         
         {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-burgundy-light/20 to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-brand-burgundy-light/20 to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-brand-gold/5 rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -45,10 +44,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col items-start gap-4">
-              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap min-w-[280px]">
+              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap min-w-70">
                 Start Your Legal Journey
               </Button>
-              <Button variant="outline-light" size="lg" className="px-10 whitespace-nowrap min-w-[280px]">
+              <Button variant="credit" size="lg" className="px-10 whitespace-nowrap min-w-70">
                 Start Your Credit Journey
               </Button>
             </div>
@@ -56,9 +55,9 @@ export default function Home() {
 
           <div className="relative">
             <Reveal direction="up" delay={0.4} duration={1.5} distance={50}>
-              <div className="relative z-10 aspect-[4/5] w-full max-w-[500px] lg:max-w-none ml-auto overflow-hidden rounded-sm ring-1 ring-brand-gold/30 p-2 bg-brand-gold/5">
+              <div className="relative z-10 aspect-4/5 w-full max-w-125 lg:max-w-none ml-auto overflow-hidden rounded-sm ring-1 ring-brand-gold/30 p-2 bg-brand-gold/5">
                 <div className="w-full h-full bg-brand-burgundy-light/30 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
                   <div className="absolute inset-0 flex items-center justify-center text-brand-gold/10 text-[12vw] font-serif italic select-none">
                     Vee
                   </div>
@@ -148,20 +147,20 @@ export default function Home() {
             </Reveal>
 
             <Reveal direction="up" delay={0.3}>
-              <div className="group relative bg-white h-full p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/10 text-brand-burgundy transition-transform hover:-translate-y-2 duration-500">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-burgundy/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
+              <div className="group relative bg-atmosphere-navy h-full p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/20 text-white transition-transform hover:-translate-y-2 duration-500">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+                <h3 className="text-brand-gold-light/60 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
                   Path Two
                 </h3>
-                <h4 className="text-3xl font-serif mb-6 text-brand-burgundy">
+                <h4 className="text-3xl font-serif mb-6 text-white">
                   Credit Confidence Series
                 </h4>
-                <p className="text-brand-burgundy/60 mb-8 leading-relaxed">
+                <p className="text-brand-cream/70 mb-8 leading-relaxed">
                   Your credit score shouldn&apos;t be a mystery. Learn how to 
                   read your own reports, spot the errors that are holding you 
                   back, and take the lead on your own restoration journey.
                 </p>
-                <ul className="space-y-4 mb-10 text-brand-burgundy/80">
+                <ul className="space-y-4 mb-10 text-brand-cream/80">
                   {[
                     "Mastering Your Reports",
                     "Writing Smart Letters",
@@ -172,12 +171,12 @@ export default function Home() {
                       key={item}
                       className="flex items-center gap-3 text-sm font-sans tracking-wide"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold-light" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" fullWidth size="lg">
+                <Button variant="primary" fullWidth size="lg">
                   Explore Credit Empowerment
                 </Button>
               </div>
@@ -242,29 +241,84 @@ export default function Home() {
             ].map((offer, i) => (
               <Reveal key={offer.title} direction="up" delay={i * 0.1}>
                 <div
-                  className={`h-full bg-white p-8 rounded-2xl border ${
-                    offer.featured ? "border-brand-gold ring-1 ring-brand-gold/20" : "border-brand-gold/10"
-                  } shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col relative overflow-hidden group`}
+                  className={`h-full p-8 rounded-2xl border shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col relative overflow-hidden group ${
+                    offer.featured
+                      ? "bg-atmosphere-gold border-brand-gold-light/30"
+                      : offer.variant === "credit"
+                      ? "bg-atmosphere-navy border-brand-gold/20"
+                      : offer.variant === "legal"
+                      ? "bg-atmosphere-card border-brand-gold/20"
+                      : "bg-white border-brand-gold/10"
+                  }`}
                 >
+                  {/* Decorative orb — matches pathway card style */}
+                  {!offer.featured && (
+                    <div className="absolute top-0 right-0 w-28 h-28 bg-brand-gold/5 rounded-full -mr-14 -mt-14 group-hover:scale-150 transition-transform duration-700" />
+                  )}
                   {offer.featured && (
-                    <div className="absolute top-0 right-0 bg-brand-gold text-brand-burgundy text-[9px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-lg">
+                    <div className="absolute top-0 right-0 w-28 h-28 bg-brand-burgundy/10 rounded-full -mr-14 -mt-14 group-hover:scale-150 transition-transform duration-700" />
+                  )}
+                  {offer.featured && (
+                    <div className="absolute top-0 right-0 bg-brand-burgundy text-brand-gold-light text-[9px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-lg z-10">
                       Best Value
                     </div>
                   )}
-                  <div className="text-[10px] text-brand-gold font-bold uppercase tracking-widest mb-4">
+                  <div className={`text-[10px] font-bold uppercase tracking-widest mb-4 ${
+                    offer.featured
+                      ? "text-brand-burgundy/60"
+                      : offer.variant === "credit" || offer.variant === "legal"
+                      ? "text-brand-gold-light"
+                      : "text-brand-gold"
+                  }`}>
                     {offer.category}
                   </div>
-                  <h5 className="text-2xl font-serif mb-4 text-brand-burgundy group-hover:text-brand-gold transition-colors">
+                  <h5 className={`text-2xl font-serif mb-4 transition-colors ${
+                    offer.featured
+                      ? "text-brand-burgundy group-hover:text-brand-burgundy-light"
+                      : offer.variant === "credit"
+                      ? "text-brand-cream group-hover:text-brand-gold-light"
+                      : offer.variant === "legal"
+                      ? "text-white group-hover:text-brand-gold-light"
+                      : "text-brand-burgundy group-hover:text-brand-gold"
+                  }`}>
                     {offer.title}
                   </h5>
-                  <p className="text-sm text-brand-burgundy/60 mb-8 grow font-sans leading-relaxed">
+                  <p className={`text-sm mb-8 grow font-sans leading-relaxed ${
+                    offer.featured
+                      ? "text-brand-burgundy/70"
+                      : offer.variant === "credit" || offer.variant === "legal"
+                      ? "text-brand-cream/70"
+                      : "text-brand-burgundy/60"
+                  }`}>
                     {offer.desc}
                   </p>
                   <div className="flex items-baseline gap-2 mb-8">
-                    <span className="text-3xl font-serif text-brand-burgundy">{offer.price}</span>
-                    <span className="text-[10px] text-brand-burgundy/40 uppercase font-bold tracking-widest">Enrollment Fee</span>
+                    <span className={`text-3xl font-serif ${
+                      offer.featured
+                        ? "text-brand-burgundy"
+                        : offer.variant === "credit" || offer.variant === "legal"
+                        ? "text-brand-cream"
+                        : "text-brand-burgundy"
+                    }`}>{offer.price}</span>
+                    <span className={`text-[10px] uppercase font-bold tracking-widest ${
+                      offer.featured
+                        ? "text-brand-burgundy/50"
+                        : offer.variant === "credit" || offer.variant === "legal"
+                        ? "text-brand-cream/40"
+                        : "text-brand-burgundy/40"
+                    }`}>Enrollment Fee</span>
                   </div>
-                  <Button variant="primary" fullWidth size="md">
+                  <Button
+                    variant={
+                      offer.featured
+                        ? "secondary"
+                        : offer.variant === "credit"
+                        ? "outline-light"
+                        : "primary"
+                    }
+                    fullWidth
+                    size="md"
+                  >
                     {offer.cta}
                   </Button>
                 </div>
@@ -274,7 +328,7 @@ export default function Home() {
 
           <Reveal direction="up" className="mt-16 text-center">
             <Link href="/courses">
-              <Button variant="outline" size="lg" className="min-w-70">
+              <Button variant="primary" size="lg" className="min-w-70">
                 View All Courses & Bundles
               </Button>
             </Link>

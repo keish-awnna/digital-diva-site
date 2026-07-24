@@ -65,7 +65,7 @@ export function ScopeSection() {
                     key={item}
                     className="flex items-start gap-4 text-brand-burgundy group"
                   >
-                    <span className="flex-shrink-0 mt-1 w-6 h-6 border border-brand-gold/20 rounded-full flex items-center justify-center bg-brand-gold/5 group-hover:bg-brand-gold/10 transition-colors">
+                    <span className="flex-start shrink-0 mt-1 w-6 h-6 border border-brand-gold/20 rounded-full flex items-center justify-center bg-brand-gold/5 group-hover:bg-brand-gold/10 transition-colors">
                       <Check size={14} className="text-brand-gold" strokeWidth={3} />
                     </span>
                     <span className="text-lg font-sans text-brand-burgundy/90 font-medium">
@@ -98,7 +98,7 @@ export function ScopeSection() {
                     key={item}
                     className="flex items-start gap-4 group"
                   >
-                    <span className="flex-shrink-0 mt-1 w-6 h-6 border border-brand-burgundy/10 rounded-full flex items-center justify-center bg-brand-burgundy/5 group-hover:bg-brand-burgundy/10 transition-colors">
+                    <span className="shrink-0 mt-1 w-6 h-6 border border-brand-burgundy/10 rounded-full flex items-center justify-center bg-brand-burgundy/5 group-hover:bg-brand-burgundy/10 transition-colors">
                       <X size={14} className="text-brand-burgundy/40" strokeWidth={3} />
                     </span>
                     <span className="text-lg font-sans text-brand-burgundy/90 font-medium">

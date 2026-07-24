@@ -76,3 +76,19 @@ body {
     var(--burg) 100%
   );
 }
+
+.bg-atmosphere-navy {
+  background: radial-gradient(
+    circle at 100% 0%,
+    #1a3a5c 0%,
+    #0d2340 70%
+  );
+}
+
+.bg-atmosphere-gold {
+  background: radial-gradient(
+    circle at 100% 0%,
+    var(--gold3) 0%,
+    var(--gold-deep) 100%
+  );
+}

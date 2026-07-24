@@ -52,7 +52,7 @@ export function AboutVeeSection() {
                 yourself with authority, clarity, and most importantly, confidence.
               </p>
             </div>
-            <Button variant="outline" size="lg">
+            <Button variant="primary" size="lg">
               Read My Full Story
             </Button>
           </div>
