@@ -547,8 +547,60 @@ Buttons should use consistent variants such as:
 - Text link
 - Disabled
 
+### Button Variant Usage Rules
+
+Do not use `outline` on white or light-colored backgrounds — it is too subtle and
+fails to draw attention as a CTA.
+
+- On **dark backgrounds** (burgundy, navy): use `primary` or `outline-light`.
+- On **white or light backgrounds**: use `primary`.
+- On **gold backgrounds**: use `secondary` (burgundy fill, gold-light text).
+- On **navy backgrounds**: use `outline-light` (cream border, cream text) when a
+  solid button would clash with the background gradient.
+
 Keep typography, spacing, borders, shadows, and card treatments consistent
 across pages.
+
+### Brand Color Coding System
+
+A consistent color-coding system has been established to visually distinguish
+the two main service pathways and the combined bundle offering.
+
+| Color | Meaning | CSS Class |
+|---|---|---|
+| Burgundy | Legal Empowerment | `bg-atmosphere-card` |
+| Navy | Credit Empowerment | `bg-atmosphere-navy` |
+| Gold | Premium / Bundle | `bg-atmosphere-gold` |
+
+This system must be applied consistently across:
+- Pathway overview cards on the homepage
+- Featured offer cards
+- Section backgrounds and accents
+- CTA button variants
+
+Do not apply navy to the global Navbar. The Navbar is a unified brand element
+that serves both pathways equally.
+
+### Atmospheric Gradient Utilities
+
+Three custom CSS utilities are defined in `src/app/globals.css` for dark card
+backgrounds. Always use these instead of flat background color classes.
+
+```css
+.bg-atmosphere-card  /* Burgundy — for legal cards and sections */
+.bg-atmosphere-navy  /* Navy — for credit cards and sections */
+.bg-atmosphere-gold  /* Gold — for premium/bundle cards and sections */
+```
+
+Additional atmosphere utilities for full-section backgrounds:
+
+```css
+.bg-atmosphere        /* Deep burgundy, radial from top center */
+.bg-atmosphere-bottom /* Deep burgundy, radial from bottom center */
+```
+
+Do not use flat hex values (`bg-brand-burgundy`, `bg-brand-navy`, `bg-brand-gold`)
+for dark card backgrounds. Use the atmospheric gradient utilities instead.
 
 ---
 
