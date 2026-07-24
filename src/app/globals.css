@@ -36,6 +36,20 @@ body {
   color: var(--foreground);
 }
 
+/* Keyboard focus — WCAG 2.4.7 Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--color-brand-gold);
+  outline-offset: 3px;
+}
+
+/* clip-path clips standard outlines — remove it on keyboard focus so the ring is visible */
+.clip-btn:focus-visible {
+  clip-path: none;
+  border-radius: 3px;
+  outline: 3px solid var(--color-brand-gold);
+  outline-offset: 3px;
+}
+
 /* Custom Utilities from Mockup */
 .clip-btn {
   clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);

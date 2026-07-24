@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Services navigation">
             <h4 className="text-brand-gold font-serif text-lg mb-6">
               Services
             </h4>
@@ -46,10 +46,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Company */}
-          <div>
+          {/* Legal */}
+          <nav aria-label="Legal navigation">
             <h4 className="text-brand-gold font-serif text-lg mb-6">Legal</h4>
             <ul className="space-y-4">
               {footerLinks.legal.map((link) => (
@@ -63,7 +63,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Legal Disclaimer & Copyright */}

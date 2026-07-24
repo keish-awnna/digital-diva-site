@@ -27,7 +27,7 @@ export function LegalHero() {
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-brand-burgundy-light/60 border border-brand-gold/30 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
-              ⚖ Legal Empowerment Series™
+              <span aria-hidden="true">⚖</span> Legal Empowerment Series™
             </div>
           </Reveal>
 

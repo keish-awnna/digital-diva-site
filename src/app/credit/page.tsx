@@ -13,13 +13,11 @@ export const metadata: Metadata = {
 export default function CreditPage() {
   return (
     <>
-      <main>
-        <CreditHero />
-        <CreditPrograms />
-        <div className="bg-brand-ivory">
-          <ScopeSection />
-        </div>
-      </main>
+      <CreditHero />
+      <CreditPrograms />
+      <div className="bg-brand-ivory">
+        <ScopeSection />
+      </div>
     </>
   );
 }

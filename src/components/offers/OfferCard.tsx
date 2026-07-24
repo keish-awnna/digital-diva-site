@@ -61,7 +61,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
         <ul className="space-y-3 mb-8 grow">
           {offer.deliverables.map((item, index) => (
             <li key={index} className="flex gap-3 text-sm items-start">
-              <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${isFeatured ? "text-brand-gold" : isLegal ? "text-brand-burgundy" : "text-brand-navy"}`} />
+              <Check aria-hidden="true" className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${isFeatured ? "text-brand-gold" : isLegal ? "text-brand-burgundy" : "text-brand-navy"}`} />
               <span className={isFeatured ? "text-brand-cream/70" : "text-brand-burgundy/70"}>{item}</span>
             </li>
           ))}

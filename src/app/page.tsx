@@ -272,7 +272,7 @@ export default function Home() {
                   }`}>
                     {offer.category}
                   </div>
-                  <h5 className={`text-2xl font-serif mb-4 transition-colors ${
+                  <h4 className={`text-2xl font-serif mb-4 transition-colors ${
                     offer.featured
                       ? "text-brand-burgundy group-hover:text-brand-burgundy-light"
                       : offer.variant === "credit"
@@ -282,7 +282,7 @@ export default function Home() {
                       : "text-brand-burgundy group-hover:text-brand-gold"
                   }`}>
                     {offer.title}
-                  </h5>
+                  </h4>
                   <p className={`text-sm mb-8 grow font-sans leading-relaxed ${
                     offer.featured
                       ? "text-brand-burgundy/70"

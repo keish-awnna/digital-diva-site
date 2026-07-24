@@ -47,7 +47,7 @@ export function AudienceSection() {
             <Reveal key={item.title} direction="up" delay={i * 0.1}>
               <div className="h-full p-8 rounded-2xl bg-brand-ivory border border-transparent hover:border-brand-gold/30 hover:bg-white transition-all duration-300 group">
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-brand-gold shadow-sm mb-6 group-hover:scale-110 group-hover:bg-brand-burgundy group-hover:text-brand-gold-light transition-all duration-300">
-                  {item.icon}
+                  <span aria-hidden="true">{item.icon}</span>
                 </div>
                 <h4 className="text-xl font-serif text-brand-burgundy mb-4">{item.title}</h4>
                 <p className="text-sm text-brand-burgundy/60 leading-relaxed font-sans">

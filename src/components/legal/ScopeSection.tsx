@@ -49,12 +49,12 @@ export function ScopeSection() {
               direction="up"
               className="p-12 lg:p-16 bg-white border-b lg:border-b-0 lg:border-r border-brand-gold/10"
             >
-              <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
+              <h3 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Focus
-              </h2>
-              <h3 className="text-4xl font-serif text-brand-burgundy mb-8 italic">
-                Our Educational Scope
               </h3>
+              <h4 className="text-4xl font-serif text-brand-burgundy mb-8 italic">
+                Our Educational Scope
+              </h4>
               <p className="text-brand-burgundy/70 mb-10 font-sans leading-relaxed text-lg">
                 We provide the resources and knowledge you need to advocate for
                 yourself with clarity and confidence.
@@ -65,8 +65,8 @@ export function ScopeSection() {
                     key={item}
                     className="flex items-start gap-4 text-brand-burgundy group"
                   >
-                    <span className="flex-start shrink-0 mt-1 w-6 h-6 border border-brand-gold/20 rounded-full flex items-center justify-center bg-brand-gold/5 group-hover:bg-brand-gold/10 transition-colors">
-                      <Check size={14} className="text-brand-gold" strokeWidth={3} />
+                    <span className="shrink-0 mt-1 w-6 h-6 border border-brand-gold/20 rounded-full flex items-center justify-center bg-brand-gold/5 group-hover:bg-brand-gold/10 transition-colors">
+                      <Check size={14} className="text-brand-gold" strokeWidth={3} aria-hidden="true" />
                     </span>
                     <span className="text-lg font-sans text-brand-burgundy/90 font-medium">
                       {item}
@@ -82,12 +82,12 @@ export function ScopeSection() {
               delay={0.2}
               className="p-12 lg:p-16 bg-brand-ivory"
             >
-              <h2 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
+              <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Boundaries
-              </h2>
-              <h3 className="text-4xl font-serif text-brand-burgundy mb-8 italic">
-                Educational Boundaries
               </h3>
+              <h4 className="text-4xl font-serif text-brand-burgundy mb-8 italic">
+                Educational Boundaries
+              </h4>
               <p className="text-brand-burgundy/70 mb-10 font-sans leading-relaxed text-lg">
                 To serve you best, it is important to understand where our
                 educational support begins and ends.
@@ -99,7 +99,7 @@ export function ScopeSection() {
                     className="flex items-start gap-4 group"
                   >
                     <span className="shrink-0 mt-1 w-6 h-6 border border-brand-burgundy/10 rounded-full flex items-center justify-center bg-brand-burgundy/5 group-hover:bg-brand-burgundy/10 transition-colors">
-                      <X size={14} className="text-brand-burgundy/40" strokeWidth={3} />
+                      <X size={14} className="text-brand-burgundy/40" strokeWidth={3} aria-hidden="true" />
                     </span>
                     <span className="text-lg font-sans text-brand-burgundy/90 font-medium">
                       {item}

@@ -27,7 +27,7 @@ export function CreditHero() {
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-blue-900/60 border border-brand-gold/30 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
-              💳 Credit Empowerment Series™
+              <span aria-hidden="true">💳</span> Credit Empowerment Series™
             </div>
           </Reveal>
 

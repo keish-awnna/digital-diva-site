@@ -43,10 +43,17 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-sans bg-brand-ivory text-brand-burgundy selection:bg-brand-burgundy selection:text-brand-gold"
         suppressHydrationWarning
       >
+        {/* Skip to main content — WCAG 2.4.1 */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[200] focus:top-4 focus:left-4 focus:px-6 focus:py-3 focus:bg-brand-gold focus:text-brand-burgundy focus:font-bold focus:text-sm focus:rounded focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <SmoothScroll>
           <DisclaimerBanner />
           <Navbar />
-          <main className="grow">{children}</main>
+          <main id="main-content" className="grow">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

@@ -37,6 +37,12 @@ export function Reveal({
     const element = containerRef.current;
     if (!element) return;
 
+    // Respect the OS-level "Reduce Motion" preference — WCAG 2.3.3
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(stagger > 0 ? element.children : element, { opacity: 1, x: 0, y: 0 });
+      return;
+    }
+
     let x = 0;
     let y = 0;
 

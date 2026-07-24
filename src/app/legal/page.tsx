@@ -13,13 +13,11 @@ export const metadata: Metadata = {
 export default function LegalPage() {
   return (
     <>
-      <main>
-        <LegalHero />
-        <LegalPrograms />
-        <div className="bg-brand-ivory">
-          <ScopeSection />
-        </div>
-      </main>
+      <LegalHero />
+      <LegalPrograms />
+      <div className="bg-brand-ivory">
+        <ScopeSection />
+      </div>
     </>
   );
 }
