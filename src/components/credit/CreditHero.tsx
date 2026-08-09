@@ -13,7 +13,7 @@ const stats = [
 
 export function CreditHero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 px-6 sm:px-12 overflow-hidden bg-brand-navy">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 bg-atmosphere opacity-90" />
       
@@ -23,7 +23,7 @@ export function CreditHero() {
         <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-blue-900/20 rounded-full blur-[80px]" />
       </div>
 
-      <div className="relative z-10 container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-blue-900/60 border border-brand-gold/30 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
