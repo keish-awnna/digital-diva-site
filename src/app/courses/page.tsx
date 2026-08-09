@@ -4,7 +4,7 @@ import { Button } from "@/components/common/Button";
 
 export default function CoursesPage() {
   return (
-    <main className="pt-24 min-h-screen bg-brand-ivory">
+    <div className="pt-24 min-h-screen bg-brand-ivory">
       {/* Header */}
       <section className="py-20 bg-white border-b border-brand-gold/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -53,6 +53,6 @@ export default function CoursesPage() {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
