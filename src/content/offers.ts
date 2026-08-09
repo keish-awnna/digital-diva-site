@@ -56,6 +56,24 @@ export const offers: Offer[] = [
     ctaLabel: "Book Now",
   },
   {
+    id: "legal-template-bundle",
+    name: "Legal Document Template Bundle",
+    category: "legal",
+    price: "$37",
+    priceUnit: "one-time · instant download",
+    tierLabel: "Templates · $37",
+    shortDescription:
+      "Ready-to-use legal document templates for self-represented defendants. Written for general use across any U.S. state — you adapt them to your specific situation.",
+    deliverables: [
+      "General denial Answer template",
+      "Affirmative defenses library",
+      "Interrogatories template (20 questions)",
+      "Request for Production template",
+      "Proof of Service form",
+    ],
+    ctaLabel: "Download",
+  },
+  {
     id: "legal-coaching-program",
     name: "Self-Rep Litigant Coaching Program",
     category: "legal",
@@ -73,24 +91,6 @@ export const offers: Offer[] = [
     ],
     ctaLabel: "Get Started",
     featured: true,
-  },
-  {
-    id: "legal-template-bundle",
-    name: "Legal Document Template Bundle",
-    category: "legal",
-    price: "$37",
-    priceUnit: "one-time · instant download",
-    tierLabel: "Templates · $37",
-    shortDescription:
-      "Ready-to-use legal document templates for self-represented defendants. Written for general use across any U.S. state — you adapt them to your specific situation.",
-    deliverables: [
-      "General denial Answer template",
-      "Affirmative defenses library",
-      "Interrogatories template (20 questions)",
-      "Request for Production template",
-      "Proof of Service form",
-    ],
-    ctaLabel: "Download",
   },
   {
     id: "legal-async-support",
