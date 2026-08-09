@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Reveal } from "../common/Reveal";
 import { Button } from "../common/Button";
 
 const stats = [
-  { value: "$97", label: "Strategy session" },
-  { value: "$47", label: "Starter course" },
-  { value: "$127", label: "Court walkthrough" },
-  { value: "$397", label: "Full coaching pkg" },
+  { value: "$97", label: "Strategy session", href: "#legal-strategy-session" },
+  { value: "$47", label: "Starter course", href: "#legal-debt-mastery" },
+  { value: "$127", label: "Court walkthrough", href: "#legal-court-walkthrough" },
+  { value: "$397", label: "Full coaching pkg", href: "#legal-coaching-program" },
 ];
 
 export function LegalHero() {
@@ -68,15 +69,16 @@ export function LegalHero() {
 
         <div className="hidden md:block relative">
           <Reveal direction="right" delay={0.5}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, i) => (
-                <div 
-                  key={i} 
-                  className="bg-brand-burgundy border border-brand-gold/20 p-8 text-center rounded-sm shadow-2xl transition-transform hover:scale-[1.02]"
+                <Link
+                  key={i}
+                  href={stat.href}
+                  className="bg-brand-burgundy border-2 border-brand-gold/40 p-12 text-center rounded-sm shadow-2xl transition-all hover:scale-[1.05] hover:border-brand-gold/60 hover:shadow-brand-gold/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
-                  <div className="font-serif text-3xl font-bold text-brand-gold-light mb-1">{stat.value}</div>
-                  <div className="text-[10px] text-brand-cream/50 uppercase tracking-widest font-semibold">{stat.label}</div>
-                </div>
+                  <div className="font-serif text-5xl font-bold text-brand-gold-light mb-2">{stat.value}</div>
+                  <div className="text-sm text-brand-cream/70 uppercase tracking-widest font-semibold">{stat.label}</div>
+                </Link>
               ))}
             </div>
           </Reveal>

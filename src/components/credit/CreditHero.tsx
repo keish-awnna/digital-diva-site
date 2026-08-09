@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Reveal } from "../common/Reveal";
 import { Button } from "../common/Button";
 
 const stats = [
-  { value: "$47", label: "Starter kit" },
-  { value: "$97", label: "Full blueprint" },
-  { value: "7", label: "Modules" },
-  { value: "30", label: "Lessons" },
+  { value: "$47", label: "Starter kit", href: "#credit-starter-kit" },
+  { value: "$97", label: "Full blueprint", href: "#credit-mastery-blueprint" },
+  { value: "7", label: "Modules", href: "#credit-products" },
+  { value: "30", label: "Lessons", href: "#credit-products" },
 ];
 
 export function CreditHero() {
@@ -72,15 +73,16 @@ export function CreditHero() {
 
         <div className="hidden md:block relative">
           <Reveal direction="right" delay={0.5}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, i) => (
-                <div 
-                  key={i} 
-                  className="bg-brand-navy border border-brand-gold/20 p-8 text-center rounded-sm shadow-2xl transition-transform hover:scale-[1.02]"
+                <Link
+                  key={i}
+                  href={stat.href}
+                  className="bg-brand-navy border-2 border-brand-gold/40 p-12 text-center rounded-sm shadow-2xl transition-all hover:scale-[1.05] hover:border-brand-gold/60 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
-                  <div className="font-serif text-3xl font-bold text-brand-gold-light mb-1">{stat.value}</div>
-                  <div className="text-[10px] text-brand-cream/50 uppercase tracking-widest font-semibold">{stat.label}</div>
-                </div>
+                  <div className="font-serif text-5xl font-bold text-brand-gold-light mb-2">{stat.value}</div>
+                  <div className="text-sm text-brand-cream/70 uppercase tracking-widest font-semibold">{stat.label}</div>
+                </Link>
               ))}
             </div>
           </Reveal>
