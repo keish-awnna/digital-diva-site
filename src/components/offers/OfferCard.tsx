@@ -35,7 +35,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
       : "bg-brand-navy/5 text-brand-navy";
 
   return (
-    <div className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${cardClasses}`}>
+    <div className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group min-h-[420px] ${cardClasses}`}>
       {/* Accent bar on hover for non-featured */}
       {!isFeatured && (
         <div className={`absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${isLegal ? "bg-brand-burgundy" : "bg-brand-navy"}`} />

@@ -34,7 +34,7 @@ export function CreditPrograms() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
           {creditOffers.map((offer, index) => (
             <Reveal key={offer.id} delay={index * 0.1}>
               <OfferCard offer={offer} theme="credit" />
