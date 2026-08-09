@@ -111,7 +111,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <Reveal direction="up" delay={0.1}>
-              <div className="group relative bg-atmosphere-card h-full p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500 border border-white/5">
+              <div className="group relative bg-atmosphere-card h-full p-8 md:p-12 rounded-2xl shadow-xl overflow-hidden text-white transition-transform hover:-translate-y-2 duration-500 border border-white/5">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                 <h3 className="text-brand-gold-light font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
                   Path One
@@ -147,7 +147,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal direction="up" delay={0.3}>
-              <div className="group relative bg-atmosphere-navy h-full p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/20 text-white transition-transform hover:-translate-y-2 duration-500">
+              <div className="group relative bg-atmosphere-navy h-full p-8 md:p-12 rounded-2xl shadow-xl overflow-hidden border border-brand-gold/20 text-white transition-transform hover:-translate-y-2 duration-500">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                 <h3 className="text-brand-gold-light/60 font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">
                   Path Two
