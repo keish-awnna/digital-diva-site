@@ -38,7 +38,7 @@ export function Navbar() {
               Login
             </Link>
             {/* TODO: Connect this CTA to the approved SuiteDash booking destination */}
-            <Button variant="primary" size="sm" disabled>
+            <Button variant="primary" size="sm" href="/contact">
               Book a Call
             </Button>
           </div>
