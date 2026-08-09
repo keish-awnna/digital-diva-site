@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/common/Button";
 import { navigationLinks } from "@/config/navigation";
+import { MobileNav } from "./MobileNav";
 
 export function Navbar() {
   return (
@@ -43,7 +44,8 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile menu button could go here */}
+          {/* Mobile Navigation Menu */}
+          <MobileNav />
         </div>
       </div>
     </nav>
