@@ -96,7 +96,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
       <div className="pt-6 border-t border-black/5 dark:border-white/10 mt-auto">
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <div className={`font-serif text-3xl font-bold ${priceClasses}`}>
+            <div className={`font-serif text-3xl font-bold mb-2 ${priceClasses}`}>
               {offer.price}
             </div>
             {offer.priceUnit && (

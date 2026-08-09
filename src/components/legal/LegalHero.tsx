@@ -82,7 +82,7 @@ export function LegalHero() {
                   }}
                   className="bg-brand-burgundy border-2 border-brand-gold/40 p-12 text-center rounded-sm shadow-2xl transition-all hover:scale-[1.05] hover:border-brand-gold/60 hover:shadow-brand-gold/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
-                  <div className="font-serif text-5xl font-bold text-brand-gold-light mb-2">{stat.value}</div>
+                  <div className="font-serif text-5xl font-bold text-brand-gold-light mb-4">{stat.value}</div>
                   <div className="text-sm text-brand-cream/70 uppercase tracking-widest font-semibold">{stat.label}</div>
                 </Link>
               ))}
