@@ -65,7 +65,7 @@ export function LegalHero() {
           </Reveal>
         </div>
 
-        <div className="hidden lg:block relative">
+        <div className="hidden md:block relative">
           <Reveal direction="right" delay={0.5}>
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, i) => (
