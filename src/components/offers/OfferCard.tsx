@@ -48,7 +48,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${!isFeatured ? "min-h-[480px]" : ""} ${cardClasses}`}
+      className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${!isFeatured ? "lg:min-h-[500px]" : ""} ${cardClasses}`}
     >
       {/* Accent bar on hover for non-featured */}
       {!isFeatured && (
