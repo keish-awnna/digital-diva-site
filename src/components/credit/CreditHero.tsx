@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { useLenis } from "@studio-freight/react-lenis";
 import { Reveal } from "../common/Reveal";
 import { Button } from "../common/Button";
 
@@ -13,6 +14,7 @@ const stats = [
 ];
 
 export function CreditHero() {
+  const lenis = useLenis();
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy">
       {/* Background Atmosphere */}
@@ -78,6 +80,10 @@ export function CreditHero() {
                 <Link
                   key={i}
                   href={stat.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    lenis?.scrollTo(stat.href, { offset: -80 });
+                  }}
                   className="bg-brand-navy border-2 border-brand-gold/40 p-12 text-center rounded-sm shadow-2xl transition-all hover:scale-[1.05] hover:border-brand-gold/60 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
                   <div className="font-serif text-5xl font-bold text-brand-gold-light mb-2">{stat.value}</div>
