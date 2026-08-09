@@ -32,9 +32,9 @@ export function LegalPrograms() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 items-start">
           {legalOffers.map((offer, index) => (
-            <Reveal key={offer.id} delay={index * 0.1}>
+            <Reveal key={offer.id} delay={index * 0.1} className={index % 3 !== 1 ? "lg:mt-14" : ""}>
               <OfferCard offer={offer} theme="legal" />
             </Reveal>
           ))}
