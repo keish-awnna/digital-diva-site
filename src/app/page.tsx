@@ -31,7 +31,7 @@ export default function Home() {
                 Welcome to the Academy
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-serif mb-10 leading-[1.05] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 leading-[1.05] tracking-tight">
               Confidence is <br />
               <span className="italic text-brand-gold-light">
                 Built Here.
@@ -44,10 +44,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col items-start gap-4">
-              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap min-w-70">
+              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap">
                 Start Your Legal Journey
               </Button>
-              <Button variant="credit" size="lg" className="px-10 whitespace-nowrap min-w-70">
+              <Button variant="credit" size="lg" className="px-10 whitespace-nowrap">
                 Start Your Credit Journey
               </Button>
             </div>
