@@ -47,7 +47,7 @@ export function ScopeSection() {
             {/* What I Do */}
             <Reveal
               direction="up"
-              className="p-12 lg:p-16 bg-white border-b lg:border-b-0 lg:border-r border-brand-gold/10"
+              className="p-8 sm:p-10 lg:p-16 bg-white border-b lg:border-b-0 lg:border-r border-brand-gold/10"
             >
               <h3 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Focus
@@ -80,7 +80,7 @@ export function ScopeSection() {
             <Reveal
               direction="up"
               delay={0.2}
-              className="p-12 lg:p-16 bg-brand-ivory"
+              className="p-8 sm:p-10 lg:p-16 bg-brand-ivory"
             >
               <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Boundaries
