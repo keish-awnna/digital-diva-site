@@ -9,7 +9,7 @@ export function LegalPrograms() {
   const legalOffers = offers.filter((o) => o.category === "legal");
 
   return (
-    <section id="legal-products" className="py-24 px-6 sm:px-12 bg-white">
+    <section id="legal-products" className="py-32 lg:py-40 px-6 sm:px-12 bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end mb-16">
           <div>
