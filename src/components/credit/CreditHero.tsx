@@ -26,24 +26,26 @@ export function CreditHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <Reveal>
-            <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-blue-900/60 border border-brand-gold/30 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-brand-gold/5 border border-brand-gold/20 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
               <span aria-hidden="true">💳</span> Credit Empowerment Series™
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] text-white mb-6">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.1] text-white mb-6">
               Understand your credit.
               <br />
-              <span className="text-brand-gold-light italic">
+              <span className="italic text-brand-gold-light">
                 Transform your future.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="font-sans text-xs uppercase tracking-[0.3em] font-bold text-brand-gold-light/80 mb-8">
-              "YOUR CREDIT SCORE IS NOT YOUR DESTINY — IT&apos;S YOUR STARTING POINT."
+            <p className="font-sans text-2xl md:text-3xl uppercase tracking-[0.2em] font-bold text-brand-gold-light mb-8 leading-tight">
+              Your credit score is not your destiny.
+              <br />
+              It&apos;s your starting point.
             </p>
           </Reveal>
 
