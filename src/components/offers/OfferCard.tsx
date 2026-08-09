@@ -48,14 +48,12 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${!isFeatured ? "lg:min-h-[500px]" : ""} ${cardClasses}`}
+      className={`relative flex flex-col rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${!isFeatured ? "lg:min-h-[500px]" : ""} ${cardClasses}`}
     >
-      {/* Accent bar on hover for non-featured */}
-      {!isFeatured && (
-        <div
-          className={`absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${isLegal ? "bg-brand-burgundy" : "bg-brand-navy"}`}
-        />
-      )}
+      {/* Accent bar on hover */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${isFeatured ? "bg-brand-gold-light" : isLegal ? "bg-brand-burgundy" : "bg-brand-navy"}`}
+      />
 
       {offer.tierLabel && (
         <div className="mb-4 flex">
