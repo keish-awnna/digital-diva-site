@@ -32,7 +32,7 @@ export function CreditHero() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-white mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-white mb-6">
               Understand your credit.
               <br />
               <span className="italic text-brand-gold-light">
