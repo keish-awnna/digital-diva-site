@@ -8,9 +8,9 @@ export function Footer() {
   return (
     <footer className="bg-brand-burgundy text-white pt-16 pb-8 border-t border-brand-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
           {/* Logo & About */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 sm:col-span-2 md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <span className="text-3xl font-serif italic text-brand-gold">
                 Digital Diva Academy
