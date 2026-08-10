@@ -16,7 +16,7 @@ export default function CreditPage() {
       <CreditHero />
       <CreditPrograms />
       <div className="bg-brand-ivory">
-        <ScopeSection />
+        <ScopeSection theme="credit" />
       </div>
     </>
   );

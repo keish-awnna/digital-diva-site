@@ -8,9 +8,10 @@ import { Check } from "lucide-react";
 interface OfferCardProps {
   offer: Offer;
   theme?: "legal" | "credit";
+  className?: string;
 }
 
-export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
+export function OfferCard({ offer, theme = "legal", className = "" }: OfferCardProps) {
   const isLegal = theme === "legal";
   const isFeatured = offer.featured;
 
@@ -19,7 +20,9 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
     ? isLegal
       ? "bg-atmosphere-card border-2 border-brand-gold shadow-2xl"
       : "bg-atmosphere-navy border-2 border-brand-gold shadow-2xl"
-    : "bg-brand-ivory border border-brand-burgundy/10 shadow-sm";
+    : isLegal
+      ? "bg-brand-ivory border border-brand-burgundy/10 shadow-sm"
+      : "bg-brand-ivory border border-brand-navy/10 shadow-sm";
 
   const titleClasses = isFeatured
     ? "text-white"
@@ -28,7 +31,9 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
       : "text-brand-navy";
   const descClasses = isFeatured
     ? "text-brand-cream/75"
-    : "text-brand-burgundy/60";
+    : isLegal
+      ? "text-brand-burgundy/60"
+      : "text-brand-navy/60";
   const priceClasses = isFeatured
     ? "text-brand-gold-light"
     : isLegal
@@ -36,7 +41,9 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
       : "text-brand-navy";
   const unitClasses = isFeatured
     ? "text-brand-cream/60"
-    : "text-brand-burgundy/50";
+    : isLegal
+      ? "text-brand-burgundy/50"
+      : "text-brand-navy/50";
 
   const tierClasses = isFeatured
     ? isLegal
@@ -48,7 +55,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${!isFeatured ? "lg:min-h-[500px]" : ""} ${cardClasses}`}
+      className={`relative flex flex-col rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${cardClasses} ${className}`}
     >
       {/* Accent bar on hover */}
       <div

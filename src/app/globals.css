@@ -92,6 +92,22 @@ body {
   );
 }
 
+.bg-atmosphere-navy-section {
+  background: radial-gradient(
+    circle at 50% -20%,
+    #1a3a5c 0%,
+    #0d2340 70%
+  );
+}
+
+.bg-atmosphere-navy-bottom {
+  background: radial-gradient(
+    circle at 50% 120%,
+    #1a3a5c 0%,
+    #0d2340 80%
+  );
+}
+
 .bg-atmosphere-gold {
   background: radial-gradient(
     circle at 100% 0%,

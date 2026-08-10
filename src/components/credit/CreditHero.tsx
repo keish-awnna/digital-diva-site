@@ -18,12 +18,12 @@ export function CreditHero() {
   return (
     <section aria-label="Credit Empowerment Series hero" className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy">
       {/* Background Atmosphere */}
-      <div className="absolute inset-0 bg-atmosphere opacity-90" />
+      <div className="absolute inset-0 bg-atmosphere-navy-section opacity-90" />
       
       {/* Decorative Accents */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] bg-brand-gold/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-blue-900/20 rounded-full blur-[80px]" />
+        <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[30%] bg-white/5 rounded-full blur-[80px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -36,19 +36,17 @@ export function CreditHero() {
 
           <Reveal delay={0.1}>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-white mb-6">
-              Understand your credit.
+              Know your credit.
               <br />
               <span className="italic text-brand-gold-light">
-                Transform your future.
+                Shape your future.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="font-sans text-2xl md:text-3xl uppercase tracking-[0.2em] font-bold text-brand-gold-light mb-8 leading-tight">
-              Your credit score is not your destiny.
-              <br />
-              It&apos;s your starting point.
+              Your score does not define you.
             </p>
           </Reveal>
 
