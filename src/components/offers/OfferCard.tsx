@@ -83,7 +83,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
               />
               <span
                 className={
-                  isFeatured ? "text-brand-cream/70" : "text-brand-burgundy/70"
+                  isFeatured ? "text-brand-cream/70" : isLegal ? "text-brand-burgundy/70" : "text-brand-navy/70"
                 }
               >
                 {item}
@@ -93,7 +93,7 @@ export function OfferCard({ offer, theme = "legal" }: OfferCardProps) {
         </ul>
       )}
 
-      <div className="pt-6 border-t border-black/5 dark:border-white/10 mt-auto">
+      <div className="pt-6 border-t border-black/5 mt-auto">
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div>
             <div className={`font-serif text-3xl font-bold mb-2 ${priceClasses}`}>

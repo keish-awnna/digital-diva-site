@@ -16,7 +16,7 @@ const stats = [
 export function LegalHero() {
   const lenis = useLenis();
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-burgundy">
+    <section aria-label="Legal Empowerment Series hero" className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-burgundy">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 bg-atmosphere opacity-90" />
       
@@ -59,7 +59,7 @@ export function LegalHero() {
 
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#legal-products">
+              <Button variant="primary" size="lg" href="#legal-products" onClick={(e) => { e.preventDefault(); lenis?.scrollTo("#legal-products", { offset: -80 }); }}>
                 See Legal Programs
               </Button>
               <Button variant="outline-light" size="lg" href="/contact">
@@ -69,13 +69,14 @@ export function LegalHero() {
           </Reveal>
         </div>
 
-        <div className="hidden md:block relative">
+        <div className="hidden lg:block relative">
           <Reveal direction="right" delay={0.5}>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, i) => (
                 <Link
                   key={i}
                   href={stat.href}
+                  aria-label={`${stat.label} — ${stat.value}`}
                   onClick={(e) => {
                     e.preventDefault();
                     lenis?.scrollTo(stat.href, { offset: -80 });

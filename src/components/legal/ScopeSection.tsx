@@ -25,14 +25,14 @@ export function ScopeSection() {
   ];
 
   return (
-    <section className="service-scope-section py-24 bg-brand-ivory relative">
+    <section aria-label="Educational scope and boundaries" className="service-scope-section py-32 lg:py-40 bg-brand-ivory relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal direction="up" className="inline-block">
-            <span className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4 block">
+            <span className="text-brand-burgundy/70 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4 block">
               Transparency & Scope
             </span>
-            <h2 className="text-5xl md:text-6xl font-serif text-brand-burgundy mb-6 italic">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-brand-burgundy mb-6 italic">
               What We Teach & What We Don’t.
             </h2>
             <div className="w-24 h-px bg-brand-gold/30 mx-auto mb-6" />
@@ -49,7 +49,7 @@ export function ScopeSection() {
               direction="up"
               className="p-8 sm:p-10 lg:p-16 bg-white border-b lg:border-b-0 lg:border-r border-brand-gold/10"
             >
-              <h3 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
+              <h3 className="text-brand-burgundy/70 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Focus
               </h3>
               <h4 className="text-4xl font-serif text-brand-burgundy mb-8 italic">
@@ -82,7 +82,7 @@ export function ScopeSection() {
               delay={0.2}
               className="p-8 sm:p-10 lg:p-16 bg-brand-ivory"
             >
-              <h3 className="text-brand-burgundy/40 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
+              <h3 className="text-brand-burgundy/70 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Boundaries
               </h3>
               <h4 className="text-4xl font-serif text-brand-burgundy mb-8 italic">

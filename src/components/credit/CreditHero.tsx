@@ -16,7 +16,7 @@ const stats = [
 export function CreditHero() {
   const lenis = useLenis();
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy">
+    <section aria-label="Credit Empowerment Series hero" className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy">
       {/* Background Atmosphere */}
       <div className="absolute inset-0 bg-atmosphere opacity-90" />
       
@@ -63,7 +63,7 @@ export function CreditHero() {
 
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#credit-products">
+              <Button variant="primary" size="lg" href="#credit-products" onClick={(e) => { e.preventDefault(); lenis?.scrollTo("#credit-products", { offset: -80 }); }}>
                 See Credit Programs
               </Button>
               <Button variant="outline-light" size="lg" href="/contact">
@@ -73,13 +73,14 @@ export function CreditHero() {
           </Reveal>
         </div>
 
-        <div className="hidden md:block relative">
+        <div className="hidden lg:block relative">
           <Reveal direction="right" delay={0.5}>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, i) => (
                 <Link
                   key={i}
                   href={stat.href}
+                  aria-label={`${stat.label} — ${stat.value}`}
                   onClick={(e) => {
                     e.preventDefault();
                     lenis?.scrollTo(stat.href, { offset: -80 });

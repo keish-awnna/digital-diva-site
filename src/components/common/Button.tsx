@@ -13,7 +13,7 @@ type ButtonSize = "sm" | "md" | "lg";
 interface ButtonProps {
   children: React.ReactNode;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
@@ -67,7 +67,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClasses}>
+      <Link href={href} className={combinedClasses} onClick={onClick}>
         {children}
       </Link>
     );
