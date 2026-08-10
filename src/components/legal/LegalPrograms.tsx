@@ -32,14 +32,17 @@ export function LegalPrograms() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 items-start">
-          {legalOffers.map((offer, index) => (
-            <div key={offer.id} id={offer.id}>
-              <Reveal delay={index * 0.1} className={index % 3 !== 1 ? "lg:mt-14" : ""}>
-                <OfferCard offer={offer} theme="legal" />
-              </Reveal>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 md:items-start lg:grid-cols-3 lg:items-stretch gap-x-6 gap-y-10">
+          {legalOffers.map((offer, index) => {
+            const isOuter = index % 3 !== 1;
+            return (
+              <div key={offer.id} id={offer.id} className={offer.id === "legal-coaching-program" ? "lg:mb-20" : isOuter ? "lg:pt-14 lg:flex lg:flex-col" : ""}>
+                <Reveal delay={index * 0.1} className={isOuter ? "lg:grow lg:flex lg:flex-col" : ""}>
+                  <OfferCard offer={offer} theme="legal" className={isOuter ? "lg:grow" : ""} />
+                </Reveal>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
