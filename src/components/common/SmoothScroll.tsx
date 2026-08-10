@@ -1,12 +1,21 @@
 "use client";
 
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { ReactNode } from "react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-/**
- * SmoothScroll component provides the inertial scrolling effect
- * for a premium, weighted feel throughout the site.
- */
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+function ScrollTriggerBridge() {
+  useLenis(() => {
+    ScrollTrigger.update();
+  });
+  return null;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function SmoothScroll({ children }: { children: any }) {
   return (
     <ReactLenis
@@ -22,6 +31,7 @@ export function SmoothScroll({ children }: { children: any }) {
         infinite: false,
       }}
     >
+      <ScrollTriggerBridge />
       {children}
     </ReactLenis>
   );
