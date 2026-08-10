@@ -44,10 +44,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col items-start gap-4">
-              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap">
+              <Button variant="primary" size="lg" className="px-10 whitespace-nowrap" href="/legal">
                 Start Your Legal Journey
               </Button>
-              <Button variant="credit" size="lg" className="px-10 whitespace-nowrap">
+              <Button variant="credit" size="lg" className="px-10 whitespace-nowrap" href="/credit">
                 Start Your Credit Journey
               </Button>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="primary" fullWidth size="lg">
+                <Button variant="primary" fullWidth size="lg" href="/legal">
                   Explore Legal Empowerment
                 </Button>
               </div>
@@ -176,7 +176,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="primary" fullWidth size="lg">
+                <Button variant="primary" fullWidth size="lg" href="/credit">
                   Explore Credit Empowerment
                 </Button>
               </div>
@@ -308,6 +308,7 @@ export default function Home() {
                         : "text-brand-burgundy/40"
                     }`}>Enrollment Fee</span>
                   </div>
+                  {/* TODO: Connect this CTA to the approved SuiteDash enrollment destination. */}
                   <Button
                     variant={
                       offer.featured
@@ -318,6 +319,7 @@ export default function Home() {
                     }
                     fullWidth
                     size="md"
+                    href="/contact"
                   >
                     {offer.cta}
                   </Button>
@@ -363,10 +365,11 @@ export default function Home() {
               and start your journey toward clarity.&quot;
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button variant="primary" size="lg" className="px-12">
+              {/* TODO: Connect this CTA to the approved SuiteDash enrollment destination. */}
+              <Button variant="primary" size="lg" className="px-12" href="/courses">
                 Enroll in a Course
               </Button>
-              <Button variant="outline-light" size="lg" className="px-12">
+              <Button variant="outline-light" size="lg" className="px-12" href="/contact">
                 Contact for Coaching
               </Button>
             </div>
