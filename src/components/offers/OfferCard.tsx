@@ -9,9 +9,10 @@ interface OfferCardProps {
   offer: Offer;
   theme?: "legal" | "credit";
   className?: string;
+  cardBg?: string;
 }
 
-export function OfferCard({ offer, theme = "legal", className = "" }: OfferCardProps) {
+export function OfferCard({ offer, theme = "legal", className = "", cardBg = "bg-brand-ivory" }: OfferCardProps) {
   const isLegal = theme === "legal";
   const isFeatured = offer.featured;
 
@@ -21,8 +22,8 @@ export function OfferCard({ offer, theme = "legal", className = "" }: OfferCardP
       ? "bg-atmosphere-card border-2 border-brand-gold shadow-2xl"
       : "bg-atmosphere-navy border-2 border-brand-gold shadow-2xl"
     : isLegal
-      ? "bg-brand-ivory border border-brand-burgundy/10 shadow-sm"
-      : "bg-brand-ivory border border-brand-navy/10 shadow-sm";
+      ? `${cardBg} border border-brand-burgundy/10 shadow-sm`
+      : `${cardBg} border border-brand-navy/10 shadow-sm`;
 
   const titleClasses = isFeatured
     ? "text-white"
@@ -55,7 +56,7 @@ export function OfferCard({ offer, theme = "legal", className = "" }: OfferCardP
 
   return (
     <div
-      className={`relative flex flex-col rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${cardClasses} ${className}`}
+      className={`relative flex flex-col rounded-xl p-6 sm:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${cardClasses} ${className}`}
     >
       {/* Accent bar on hover */}
       <div

@@ -32,13 +32,22 @@ export function LegalAudienceSection() {
   return (
     <section
       aria-label="Who the Legal Empowerment Series is for"
-      className="legal-audience-section py-32 lg:py-40 bg-brand-ivory"
+      className="legal-audience-section py-32 lg:py-40 bg-brand-ivory relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.45]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(28,4,8,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <Reveal direction="up">
             <div className="text-brand-burgundy/80 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3">
-              Legal Empowerment Series™
+              Legal Empowerment Series
               <div className="h-px w-8 bg-brand-burgundy/30" aria-hidden="true" />
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-brand-burgundy mb-6 italic">

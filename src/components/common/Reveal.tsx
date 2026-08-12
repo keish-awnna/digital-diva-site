@@ -2,11 +2,6 @@
 
 import { useEffect, useRef, ReactNode } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 interface RevealProps {
   children: ReactNode;
@@ -20,7 +15,9 @@ interface RevealProps {
 
 /**
  * Reveal component handles sophisticated "Ivy League" entry animations.
- * It uses a restrained fade-and-slide movement for a premium feel.
+ * Uses IntersectionObserver (not ScrollTrigger) so it works correctly
+ * regardless of how many instances are on a page and without any
+ * synchronization overhead with Lenis.
  */
 export function Reveal({
   children,
@@ -53,30 +50,37 @@ export function Reveal({
       case "right": x = -distance; break;
     }
 
-    const childrenArray = element.children;
+    const target = stagger > 0 ? element.children : element;
 
-    gsap.fromTo(
-      stagger > 0 ? childrenArray : element,
-      {
-        opacity: 0,
-        x: x,
-        y: y,
+    // Set the hidden initial state immediately so there's no flash of content
+    gsap.set(target, { opacity: 0, x, y });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          gsap.to(target, {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration,
+            delay,
+            stagger: stagger > 0 ? stagger : undefined,
+            ease: "expo.out",
+          });
+          // Play once then stop observing
+          observer.unobserve(element);
+        });
       },
-      {
-        opacity: 1,
-        x: 0,
-        y: 0,
-        duration: duration,
-        delay: delay,
-        stagger: stagger > 0 ? stagger : undefined,
-        ease: "expo.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 85%", // Starts when element is 85% from top of viewport
-          toggleActions: "play none none none", // Only plays once
-        },
-      }
+      { threshold: 0.1 }
     );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      gsap.killTweensOf(target);
+    };
   }, [direction, delay, duration, distance, stagger]);
 
   return (

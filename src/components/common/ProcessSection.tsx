@@ -31,9 +31,11 @@ export function ProcessSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal className="text-center mb-20" direction="up">
-          <h2 className="text-brand-gold-light font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
-            Our Approach
-          </h2>
+          <div className="flex items-center justify-center gap-5 mb-4">
+            <div className="h-px w-16 bg-brand-gold-light/30" aria-hidden="true" />
+            <span className="text-brand-gold-light font-sans uppercase tracking-[0.3em] text-[10px] font-bold">Our Approach</span>
+            <div className="h-px w-16 bg-brand-gold-light/30" aria-hidden="true" />
+          </div>
           <h3 className="text-4xl md:text-5xl font-serif mb-6 italic">
             Simple, Clear, and Empowering
           </h3>

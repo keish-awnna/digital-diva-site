@@ -8,7 +8,7 @@ import { ScopeSection } from "@/components/legal/ScopeSection";
 import { LegalCTASection } from "@/components/legal/LegalCTASection";
 
 export const metadata: Metadata = {
-  title: "Legal Empowerment Series™ | Digital Diva Academy By Vee™",
+  title: "Legal Empowerment Series | Digital Diva Academy By Vee",
   description:
     "Legal education, court process coaching, and debt defense strategy for self-represented individuals. Master your case with confidence.",
 };
