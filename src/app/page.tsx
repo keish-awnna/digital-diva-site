@@ -8,7 +8,7 @@ import { AudienceSection } from "@/components/common/AudienceSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Digital Diva Academy By Vee™ | Legal & Credit Empowerment",
+  title: "Digital Diva Academy By Vee | Legal & Credit Empowerment",
   description: "Empowering self-represented litigants and everyday individuals with the education to navigate legal and credit systems with confidence.",
 };
 
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-brand-burgundy-light/20 to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-brand-gold/5 rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 lg:gap-16 items-center relative z-10">
           <Reveal className="text-white" direction="up" duration={1.2}>
             <div className="inline-flex items-center px-4 py-1.5 bg-brand-gold/5 border border-brand-gold/20 rounded-full mb-8">
               <span className="text-brand-gold-light text-[10px] uppercase tracking-[0.4em] font-sans font-bold">
@@ -55,7 +55,7 @@ export default function Home() {
 
           <div className="relative">
             <Reveal direction="up" delay={0.4} duration={1.5} distance={50}>
-              <div className="relative z-10 aspect-4/5 w-full max-w-125 lg:max-w-none ml-auto overflow-hidden rounded-sm ring-1 ring-brand-gold/30 p-2 bg-brand-gold/5">
+              <div className="relative z-10 aspect-4/5 w-full max-w-sm md:max-w-none ml-auto overflow-hidden rounded-sm ring-1 ring-brand-gold/30 p-2 bg-brand-gold/5">
                 <div className="w-full h-full bg-brand-burgundy-light/30 relative overflow-hidden group">
                   <div className="absolute inset-0 bg-linear-to-t from-brand-burgundy via-transparent to-transparent opacity-60" />
                   <div className="absolute inset-0 flex items-center justify-center text-brand-gold/10 text-[12vw] font-serif italic select-none">
@@ -92,12 +92,23 @@ export default function Home() {
       </div>
 
       {/* Pathway Overview Section Starts Immediately After (StatRow Removed) */}
-      <section className="pathway-overview py-32 bg-brand-ivory relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pathway-overview py-32 bg-brand-ivory relative overflow-hidden">
+        {/* Dot grid texture — matches courses page ivory treatment */}
+        <div
+          className="absolute inset-0 opacity-[0.45]"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(28,4,8,0.18) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+          aria-hidden="true"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="text-center mb-20" direction="up">
-            <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
-              Your Journey
-            </h2>
+            <div className="flex items-center justify-center gap-5 mb-4">
+              <div className="h-px w-16 bg-brand-gold-text/30" aria-hidden="true" />
+              <span className="text-brand-gold-text font-sans uppercase tracking-[0.3em] text-[10px] font-bold">Your Journey</span>
+              <div className="h-px w-16 bg-brand-gold-text/30" aria-hidden="true" />
+            </div>
             <h3 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-6 italic">
               Simple Steps to Big Changes
             </h3>
@@ -214,7 +225,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-end">
             {[
               {
-                title: "Debt Defense Mastery™",
+                title: "Debt Defense Mastery",
                 category: "Legal Empowerment",
                 desc: "Essential templates and educational guidance for responding to debt collection lawsuits and organizing your initial defense.",
                 price: "$47",
@@ -222,7 +233,7 @@ export default function Home() {
                 cta: "Explore the Course"
               },
               {
-                title: "Credit Mastery Blueprint™",
+                title: "Credit Mastery Blueprint",
                 category: "Credit Empowerment",
                 desc: "Learn to read your reports, spot errors, and take the lead on your restoration journey with proven educational tools.",
                 price: "$97",
@@ -230,7 +241,7 @@ export default function Home() {
                 cta: "Explore the Course"
               },
               {
-                title: "Ultimate Empowerment Bundle™",
+                title: "Ultimate Empowerment Bundle",
                 category: "Legal + Credit",
                 desc: "The complete education system covering both legal defense and credit restoration mastery at a bundled value.",
                 price: "$147",

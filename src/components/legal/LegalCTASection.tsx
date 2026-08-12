@@ -1,3 +1,4 @@
+import { Scale } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
 import { Button } from "@/components/common/Button";
 
@@ -27,7 +28,7 @@ export function LegalCTASection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <Reveal direction="up">
           <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-brand-gold/5 border border-brand-gold/20 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-8">
-            <span aria-hidden="true">⚖</span> Legal Empowerment Series™
+            <Scale aria-hidden="true" className="w-3.5 h-3.5" /> Legal Empowerment Series
           </div>
         </Reveal>
 

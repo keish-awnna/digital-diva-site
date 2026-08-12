@@ -31,25 +31,30 @@ export function ScopeSection({ theme = "legal" }: ScopeSectionProps) {
   const isCredit = theme === "credit";
   const textPrimary   = isCredit ? "text-brand-navy"     : "text-brand-burgundy";
   const textMuted     = isCredit ? "text-brand-navy/70"  : "text-brand-burgundy/70";
-  const textFaint     = isCredit ? "text-brand-navy/40"  : "text-brand-burgundy/40";
   const textStrong    = isCredit ? "text-brand-navy/90"  : "text-brand-burgundy/90";
-  const borderMuted   = isCredit ? "border-brand-navy/10"  : "border-brand-burgundy/10";
-  const bgFaint       = isCredit ? "bg-brand-navy/5"     : "bg-brand-burgundy/5";
-  const bgFaintHover  = isCredit ? "group-hover:bg-brand-navy/10"  : "group-hover:bg-brand-burgundy/10";
   const bannerBg      = isCredit ? "bg-brand-navy"       : "bg-brand-burgundy";
   const cardShadow    = isCredit
     ? "shadow-[0_40px_100px_-20px_rgba(13,35,64,0.15)]"
     : "shadow-[0_40px_100px_-20px_rgba(28,4,8,0.15)]";
 
   return (
-    <section aria-label="Educational scope and boundaries" className="service-scope-section py-32 lg:py-40 bg-brand-ivory relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section aria-label="Educational scope and boundaries" className="service-scope-section py-32 lg:py-40 bg-brand-ivory relative overflow-hidden">
+      {/* Dot grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.45]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(28,4,8,0.18) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <Reveal direction="up" className="inline-block">
             <span className={`${textMuted} font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4 block`}>
               Transparency & Scope
             </span>
-            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-serif ${textPrimary} mb-6 italic`}>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-serif ${textPrimary} mb-6 italic text-balance`}>
               What We Teach & What We Don&apos;t.
             </h2>
             <div className="w-24 h-px bg-brand-gold/30 mx-auto mb-6" />
@@ -97,15 +102,15 @@ export function ScopeSection({ theme = "legal" }: ScopeSectionProps) {
             <Reveal
               direction="up"
               delay={0.2}
-              className="p-8 sm:p-10 lg:p-16 bg-brand-ivory"
+              className="p-8 sm:p-10 lg:p-16 bg-atmosphere-card"
             >
-              <h3 className={`${textMuted} font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6`}>
+              <h3 className="text-brand-gold/60 font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6">
                 The Boundaries
               </h3>
-              <h4 className={`text-4xl font-serif ${textPrimary} mb-8 italic`}>
+              <h4 className="text-4xl font-serif text-brand-gold-light mb-8 italic">
                 Educational Boundaries
               </h4>
-              <p className={`${textMuted} mb-10 font-sans leading-relaxed text-lg`}>
+              <p className="text-brand-cream/60 mb-10 font-sans leading-relaxed text-lg">
                 To serve you best, it is important to understand where our
                 educational support begins and ends.
               </p>
@@ -115,10 +120,10 @@ export function ScopeSection({ theme = "legal" }: ScopeSectionProps) {
                     key={item}
                     className="flex items-start gap-4 group"
                   >
-                    <span className={`shrink-0 mt-1 w-6 h-6 border ${borderMuted} rounded-full flex items-center justify-center ${bgFaint} ${bgFaintHover} transition-colors`}>
-                      <X size={14} className={textFaint} strokeWidth={3} aria-hidden="true" />
+                    <span className="shrink-0 mt-1 w-6 h-6 border border-white/10 rounded-full flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors">
+                      <X size={14} className="text-brand-cream/40" strokeWidth={3} aria-hidden="true" />
                     </span>
-                    <span className={`text-lg font-sans ${textStrong} font-medium`}>
+                    <span className="text-lg font-sans text-brand-cream/75 font-medium">
                       {item}
                     </span>
                   </li>

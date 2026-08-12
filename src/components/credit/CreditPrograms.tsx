@@ -5,17 +5,24 @@ import { offers } from "@/content/offers";
 import { OfferCard } from "../offers/OfferCard";
 import { Reveal } from "../common/Reveal";
 
-export function CreditPrograms() {
+interface CreditProgramsProps {
+  hideHeader?: boolean;
+  className?: string;
+  cardBg?: string;
+}
+
+export function CreditPrograms({ hideHeader = false, className = "bg-white", cardBg }: CreditProgramsProps) {
   const creditOffers = offers.filter((o) => o.category === "credit");
+  const padding = hideHeader ? "pt-8 sm:pt-10 pb-20 lg:pt-14 lg:pb-40" : "py-20 lg:py-32";
 
   return (
-    <section id="credit-products" aria-label="Credit programs and courses" className="py-32 lg:py-40 bg-white">
+    <section id="credit-products" aria-label="Credit programs and courses" className={`${padding} ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end mb-16">
+        {!hideHeader && <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end mb-16">
           <div>
             <Reveal>
               <div className="text-brand-navy/80 text-[10px] font-bold tracking-[0.2em] uppercase mb-3 flex items-center gap-3">
-                Credit Empowerment Series™
+                Credit Empowerment Series
                 <div className="h-px w-8 bg-brand-navy/30" />
               </div>
             </Reveal>
@@ -32,15 +39,15 @@ export function CreditPrograms() {
               repair organization.</span>
             </p>
           </Reveal>
-        </div>
+        </div>}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 md:items-start lg:grid-cols-3 lg:items-stretch gap-x-6 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:items-stretch lg:grid-cols-3 lg:items-stretch gap-x-6 gap-y-10">
           {creditOffers.map((offer, index) => {
             const isOuter = index % 3 !== 1;
             return (
-              <div key={offer.id} id={offer.id} className={isOuter ? "lg:pt-14 lg:flex lg:flex-col" : ""}>
-                <Reveal delay={index * 0.1} className={isOuter ? "lg:grow lg:flex lg:flex-col" : ""}>
-                  <OfferCard offer={offer} theme="credit" className={isOuter ? "lg:grow" : ""} />
+              <div key={offer.id} id={offer.id} className={`md:flex md:flex-col ${isOuter ? "lg:pt-14 lg:flex lg:flex-col" : ""}`.trim()}>
+                <Reveal delay={index * 0.1} className={`md:grow md:flex md:flex-col ${isOuter ? "lg:grow lg:flex lg:flex-col" : ""}`.trim()}>
+                  <OfferCard offer={offer} theme="credit" className={`md:grow ${isOuter ? "lg:grow" : ""}`.trim()} cardBg={cardBg} />
                 </Reveal>
               </div>
             );

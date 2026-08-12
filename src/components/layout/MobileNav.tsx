@@ -61,7 +61,7 @@ export function MobileNav() {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden flex items-center justify-center w-10 h-10 text-white hover:text-brand-gold transition-colors"
+        className="lg:hidden flex items-center justify-center w-10 h-10 text-white hover:text-brand-gold transition-colors"
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
@@ -74,7 +74,7 @@ export function MobileNav() {
         <>
           {/* Overlay backdrop */}
           <div
-            className="fixed inset-0 bg-black/40 z-40 md:hidden"
+            className="fixed inset-0 bg-black/40 z-40 lg:hidden"
             aria-hidden="true"
           />
 
@@ -82,7 +82,7 @@ export function MobileNav() {
           <div
             ref={menuRef}
             id="mobile-menu"
-            className="fixed top-20 right-0 bottom-0 w-72 bg-brand-burgundy text-white shadow-2xl z-50 md:hidden overflow-y-auto border-l border-brand-gold/20"
+            className="fixed top-20 right-0 bottom-0 w-72 bg-brand-burgundy text-white shadow-2xl z-50 lg:hidden overflow-y-auto border-l border-brand-gold/20"
             role="navigation"
             aria-label="Mobile navigation"
           >

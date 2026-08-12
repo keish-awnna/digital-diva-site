@@ -4,7 +4,7 @@ export const offers: Offer[] = [
   // LEGAL SERIES
   {
     id: "legal-debt-mastery",
-    name: "Debt Defense Mastery™",
+    name: "Debt Defense Mastery",
     category: "legal",
     price: "$47",
     priceUnit: "one-time · instant access",
@@ -113,7 +113,7 @@ export const offers: Offer[] = [
   // CREDIT SERIES
   {
     id: "credit-starter-kit",
-    name: "Credit Repair Starter Kit™",
+    name: "Credit Repair Starter Kit",
     category: "credit",
     price: "$47",
     priceUnit: "one-time · instant access",
@@ -131,7 +131,7 @@ export const offers: Offer[] = [
   },
   {
     id: "credit-mastery-blueprint",
-    name: "Credit Mastery Blueprint™",
+    name: "Credit Mastery Blueprint",
     category: "credit",
     price: "$97",
     priceUnit: "one-time · instant access",

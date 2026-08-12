@@ -21,9 +21,11 @@ export function AboutVeeSection() {
           </div>
 
           <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-brand-gold font-sans uppercase tracking-[0.3em] text-xs font-bold mb-4">
-              Meet the Founder
-            </h2>
+            <div className="flex items-center justify-center lg:justify-start gap-5 mb-4">
+              <div className="h-px w-16 bg-brand-gold-text/30" aria-hidden="true" />
+              <span className="text-brand-gold-text font-sans uppercase tracking-[0.3em] text-[10px] font-bold">Meet the Founder</span>
+              <div className="h-px w-16 bg-brand-gold-text/30" aria-hidden="true" />
+            </div>
             <h3 className="text-4xl md:text-5xl font-serif text-brand-burgundy mb-8 italic">
               Confidence is built through knowledge.
             </h3>

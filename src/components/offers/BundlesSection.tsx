@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 const bundles = [
   {
     name: "Legal Starter Bundle",
-    contents: "Debt Defense Mastery™ + Legal Document Template Bundle",
+    contents: "Debt Defense Mastery + Legal Document Template Bundle",
     price: "$67",
     was: "$84",
     save: "$17",
@@ -13,7 +13,7 @@ const bundles = [
   },
   {
     name: "Credit Starter Bundle",
-    contents: "Credit Repair Starter Kit™ + Credit Dispute Template Bundle",
+    contents: "Credit Repair Starter Kit + Credit Dispute Template Bundle",
     price: "$67",
     was: "$84",
     save: "$17",
@@ -21,7 +21,7 @@ const bundles = [
   },
   {
     name: "Dual Empowerment Bundle",
-    contents: "Debt Defense Mastery™ + Credit Repair Starter Kit™ — legal AND credit education together",
+    contents: "Debt Defense Mastery + Credit Repair Starter Kit — legal AND credit education together",
     price: "$67",
     was: "$94",
     save: "$27",
@@ -29,7 +29,7 @@ const bundles = [
   },
   {
     name: "Complete Mastery Bundle",
-    contents: "Debt Defense Mastery™ + Credit Mastery Blueprint™ (full 7-module course) — the complete system",
+    contents: "Debt Defense Mastery + Credit Mastery Blueprint (full 7-module course) — the complete system",
     price: "$127",
     was: "$144",
     save: "$17",
@@ -37,7 +37,7 @@ const bundles = [
   },
   {
     name: "Ultimate Empowerment Bundle",
-    contents: "Debt Defense Mastery™ + Credit Mastery Blueprint™ + both template bundles — everything in one",
+    contents: "Debt Defense Mastery + Credit Mastery Blueprint + both template bundles — everything in one",
     price: "$147",
     was: "$218",
     save: "$71",
@@ -75,9 +75,9 @@ export function BundlesSection() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:items-stretch lg:items-end">
           {bundles.map((bundle, i) => (
-            <Reveal key={bundle.name} direction="up" delay={i * 0.1}>
+            <Reveal key={bundle.name} direction="up" delay={i * 0.1} className="md:h-full md:flex md:flex-col">
               <div
                 className={`flex flex-col h-full bg-white/5 backdrop-blur-sm p-8 rounded-2xl border ${
                   bundle.featured
@@ -115,10 +115,12 @@ export function BundlesSection() {
                     </div>
                   </div>
                   
+                  {/* TODO: Connect this CTA to the approved SuiteDash enrollment destination. */}
                   <Button
                     variant={bundle.featured ? "primary" : "outline-light"}
                     fullWidth
                     size="md"
+                    href="/contact"
                     className="font-bold tracking-widest text-[10px] uppercase"
                   >
                     Get Bundle

@@ -16,7 +16,7 @@ export function Footer() {
                 Digital Diva Academy
               </span>
               <span className="block text-[10px] uppercase tracking-[0.2em] font-sans text-brand-gold-light mt-1">
-                By Vee™
+                By Vee
               </span>
             </Link>
             <p className="text-brand-ivory/70 max-w-sm mb-6 font-sans text-sm leading-relaxed">
@@ -74,7 +74,7 @@ export function Footer() {
             </p>
           </div>
           <p className="text-[10px] text-brand-gold-light/60 uppercase tracking-widest font-sans">
-            &copy; {currentYear} Digital Diva Academy By Vee™. All Rights
+            &copy; {currentYear} Digital Diva Academy By Vee. All Rights
             Reserved.
           </p>
         </div>

@@ -2,9 +2,16 @@
 
 import React from "react";
 import Link from "next/link";
-import { useLenis } from "@studio-freight/react-lenis";
+import { Scale } from "lucide-react";
 import { Reveal } from "../common/Reveal";
 import { Button } from "../common/Button";
+
+const scrollTo = (id: string) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - 80;
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
 
 const stats = [
   { value: "$97", label: "Strategy session", href: "#legal-strategy-session" },
@@ -14,7 +21,6 @@ const stats = [
 ];
 
 export function LegalHero() {
-  const lenis = useLenis();
   return (
     <section aria-label="Legal Empowerment Series hero" className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-burgundy">
       {/* Background Atmosphere */}
@@ -30,7 +36,7 @@ export function LegalHero() {
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-brand-gold/5 border border-brand-gold/20 text-brand-gold-light text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">
-              <span aria-hidden="true">⚖</span> Legal Empowerment Series™
+              <Scale aria-hidden="true" className="w-3.5 h-3.5" /> Legal Empowerment Series
             </div>
           </Reveal>
 
@@ -59,7 +65,7 @@ export function LegalHero() {
 
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="#legal-products" onClick={(e) => { e.preventDefault(); lenis?.scrollTo("#legal-products", { offset: -80 }); }}>
+              <Button variant="primary" size="lg" href="#legal-products" onClick={(e) => { e.preventDefault(); scrollTo("#legal-products"); }}>
                 See Legal Programs
               </Button>
               <Button variant="outline-light" size="lg" href="/contact">
@@ -79,7 +85,7 @@ export function LegalHero() {
                   aria-label={`${stat.label} — ${stat.value}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    lenis?.scrollTo(stat.href, { offset: -80 });
+                    scrollTo(stat.href);
                   }}
                   className="bg-brand-burgundy border-2 border-brand-gold/40 p-12 text-center rounded-sm shadow-2xl transition-all hover:scale-[1.05] hover:border-brand-gold/60 hover:shadow-brand-gold/10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
                 >
